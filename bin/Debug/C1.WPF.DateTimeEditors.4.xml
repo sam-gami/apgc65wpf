@@ -1,0 +1,1274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>C1.WPF.DateTimeEditors.4</name>
+  </assembly>
+  <members>
+    <member name="T:C1.WPF.DateTimeEditors.C1DatePicker">
+      <summary>日付値の選択と編集を許可します。</summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DatePicker.OnCreateAutomationPeer">
+      <summary>コントロールのテストに使用される AutomationPeer を取得します。</summary>
+      <returns>コントロールのテストに使用される AutomationPeer。</returns>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DatePicker.ChangeVisualStateCommon(System.Boolean)">
+      <summary>Common 表示状態グループの現在の表示状態をオブジェクトのプロパティに一致するように更新します。</summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DatePicker.OnDateValidationError(System.Windows.Controls.DatePickerDateValidationErrorEventArgs)">
+      <summary>
+        <see cref="E:C1.WPF.DateTimeEditors.C1DatePicker.DateValidationError" />イベントを発生させます。
+      </summary>
+      <param name="e">
+        <see cref="T:System.Windows.Controls.DatePickerDateValidationErrorEventArgs" />イベントのパラメータ。
+      </param>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DatePicker.OnSelectionCommitted">
+      <summary>SelectionCommitted イベントを発生させます。</summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDateChangedEvent">
+      <summary>
+        ルーティングされた
+        <see cref="E:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDateChanged" />イベントを識別します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DatePicker.OnSelectedDateChanged(System.Windows.Controls.SelectionChangedEventArgs)">
+      <summary>
+        <see cref="E:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDateChanged" />イベントを発生させます。
+      </summary>
+      <param name="e">
+        <see cref="T:System.Windows.Controls.SelectionChangedEventArgs" />イベント引数。
+      </param>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDateProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDate" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDateEndProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDateEnd" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDateStartProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDateStart" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDateProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDate" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DatePicker.ToString">
+      <summary>選択された日付のテキスト表現を提供します。</summary>
+      <returns>選択された日付のテキスト表現。または、SelectedDate が null 参照の場合は空文字列。</returns>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DatePicker.FinalizeEditing">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDate" />プロパティ値の更新を実行します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DatePicker.OnMouseWheel(System.Windows.Input.MouseWheelEventArgs)">
+      <summary>
+        マウスホイールの変化量に従って
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDate" />プロパティを変更します。
+      </summary>
+      <param name="e">
+        イベントデータを含む
+        <see cref="T:System.Windows.Input.MouseWheelEventArgs" />。
+      </param>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DatePicker.OnLostFocus(System.Windows.RoutedEventArgs)">
+      <summary>
+        フォーカスが
+        <see cref="T:C1.WPF.DateTimeEditors.C1DatePicker" />コントロールから移動した場合に、編集を終了してドロップダウン部分を閉じます。
+      </summary>
+      <param name="e">
+        <see cref="T:System.Windows.RoutedEventArgs" />。
+      </param>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DatePicker.ChangeVisualStateFocus(System.Boolean)">
+      <summary>Focus 表示状態グループの現在の表示状態をオブジェクトのプロパティに一致するように更新します。</summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.AllowNullProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.AllowNull" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.CalendarStyleProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.CalendarStyle" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.CaretBrushProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.CaretBrush" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.CornerRadiusProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.CornerRadius" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.CustomFormatProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.CustomFormat" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.FirstDayOfWeekProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.FirstDayOfWeek" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.IsDropDownOpenProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.IsDropDownOpen" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.IsReadOnlyProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.IsReadOnly" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.IsTodayHighlightedProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.IsTodayHighlighted" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.MaskProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.Mask" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.PromptProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.Prompt" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDateFormatProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDateFormat" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.SelectionBackgroundProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.SelectionBackground" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.SelectionForegroundProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.SelectionForeground" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.TextProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.Text" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.WatermarkProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.Watermark" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.FocusCuesVisibilityProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.FocusCuesVisibility" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.DisabledCuesVisibilityProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.DisabledCuesVisibility" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.IsFocusedProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.IsFocused" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.ValidationDecoratorStyleProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.ValidationDecoratorStyle" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.MouseOverBrushProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.MouseOverBrush" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.PressedBrushProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.PressedBrush" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.FocusBrushProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.FocusBrush" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.ButtonBackgroundProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.ButtonBackground" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePicker.ButtonForegroundProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.ButtonForeground" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DatePicker.#ctor">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DatePicker" />の新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DatePicker.OnApplyTemplate">
+      <summary>
+        新しいテンプレートが適用されたときに、
+        <see cref="T:C1.WPF.DateTimeEditors.C1DatePicker" />コントロールのビジュアルツリーを作成します。
+      </summary>
+      <remarks>
+        このメソッドは、アプリケーションコードや内部処理（リビルドレイアウトパスなど）が
+        <see cref="M:ApplyTemplate" />メソッドを呼び出すときに必ず呼び出されます。
+      </remarks>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1DatePicker.IsMouseOverChanged">
+      <summary>
+        <see cref="P:IsMouseOver" />プロパティが変更されたときに発生するイベントです。
+      </summary>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1DatePicker.CalendarClosed">
+      <summary>
+        ドロップダウン
+        <see cref="T:System.Windows.Controls.Calendar" />が閉じられるときに発生します。
+      </summary>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1DatePicker.CalendarOpened">
+      <summary>
+        ドロップダウン
+        <see cref="T:System.Windows.Controls.Calendar" />が開かれるときに発生します。
+      </summary>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1DatePicker.DateValidationError">
+      <summary>C1DatePicker に入力されたテキストを解析できないとき、または選択された Date が有効でないときに発生します。</summary>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1DatePicker.SelectionCommitted">
+      <summary>SelectionCommitted イベントは、選択された日付がコミットされると発生します。</summary>
+      <remarks>エンドユーザーがキーボードを使用してドロップダウンカレンダーを操作している間に SelectedDate プロパティが変更される場合があります。この場合は、SelectedDateChanged イベントが何度も発生します。SelectionCommitted イベントは、ドロップダウンカレンダーを閉じるときに一度だけ発生します。ドロップダウンカレンダーを使用せずに SelectedDate プロパティが変更された場合は、SelectionCommitted イベントと SelectedDateChanged イベントが一度ずつ発生します。</remarks>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDateChanged">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDate" />プロパティが変更されたときに発生します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.BlackoutDates">
+      <summary>選択不可としてマークされる日付のコレクションを取得します。</summary>
+      <value>選択できない日付のコレクション。デフォルト値は、空のコレクションです。</value>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDate">
+      <summary>表示される日付を取得または設定します。</summary>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        指定された日付が
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDateStart" />および
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDateEnd" />によって定義される範囲にありません。
+      </exception>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDateEnd">
+      <summary>表示される最後の日付を取得または設定します。</summary>
+      <value>表示する最後の日付。</value>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDateStart">
+      <summary>表示される最初の日付を取得または設定します。</summary>
+      <value>表示する最初の日付。</value>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDate">
+      <summary>現在選択されている日付を取得または設定します。</summary>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        指定された日付が
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDateStart" />および
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.DisplayDateEnd" />によって定義された範囲にありません。または、指定された日付が
+        <see cref="P:C1.WPF.DateTimeEditors.C1DatePicker.BlackoutDates" />コレクションに入っています。
+      </exception>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.AllowNull">
+      <summary>ユーザーが null 値を入力できるかどうかを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.CalendarStyle">
+      <summary>カレンダーのレンダリング時に使用されるスタイルを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.CaretBrush">
+      <summary>
+        入力コントロールの点滅カーソルの
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。.NET Framework が v3.5 の場合、「CaretBrush」は無効になります。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.CornerRadius">
+      <summary>要素の角を丸める度合いを表す値を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.CustomFormat">
+      <summary>カスタム日付/時刻書式文字列を取得または設定します。</summary>
+      <remarks>
+        デフォルトは null です。
+        <para>Mask プロパティと CustomFormat プロパティの両方を使用する場合は、両方のプロパティ値が矛盾しないようにしてください。</para></remarks>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.FirstDayOfWeek">
+      <summary>週の始まりと見なされる日を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.IsDropDownOpen">
+      <summary>ドロップダウンカレンダーが開いているか、閉じているかを示す値を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.IsReadOnly">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DatePicker" />が読み取り専用かどうかを決定する値を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.IsTodayHighlighted">
+      <summary>現在の日付がドロップダウンカレンダーで強調表示されるかどうかを指定するブール値を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.Mask">
+      <summary>入力マスクを取得または設定します。</summary>
+      <remarks>
+        <para>マスクは、各入力位置で使用できる文字の種類を決定する文字列です。</para>
+        <para>有効なマスク文字は次のとおりです。</para>
+        <para>
+          <b>0</b>数字（０～９）
+        </para>
+        <para>
+          <b>9</b>数字またはスペース
+        </para>
+        <para>
+          <b>#</b>数字、スペース、または符号（+/-）
+        </para>
+        <para>
+          <b>L</b>英字
+        </para>
+        <para>
+          <b>?</b>英字またはスペース
+        </para>
+        <para>
+          <b>A</b>英字または数字
+        </para>
+        <para>
+          <b>a</b>英字、数字、またはスペース
+        </para>
+        <para>
+          <b>&amp;</b>任意の文字
+        </para>
+        <para>
+          <b>.</b>ローカライズされた小数点記号
+        </para>
+        <para>
+          <b>,</b>ローカライズされた３桁ごとの区切り記号
+        </para>
+        <para>
+          <b>:</b>ローカライズされた時刻の区切り記号
+        </para>
+        <para>
+          <b>/</b>ローカライズされた日付の区切り記号
+        </para>
+        <para>その他の文字はリテラルとして扱われます。リテラル文字はコントロールに表示されますが、編集できません。</para>
+        <para>たとえば、マスク "000-0000" を指定すると、４桁目は常にダッシュになり、それ以外は数字だけを入力できます。</para>
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.Prompt">
+      <summary>ユーザーが入力する領域を示すために使用する文字を取得または設定します。</summary>
+      <remarks>デフォルト値は "_" です。</remarks>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.SelectedDateFormat">
+      <summary>選択した日付の表示に使用される書式を取得または設定します。</summary>
+      <remarks>
+        指定された書式が有効でない場合は、
+        <see cref="T:System.ArgumentOutOfRangeException" />が生成されます。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.Text">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DatePicker" />コントロールに表示されるテキストを取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.Watermark">
+      <summary>ウォーターマークのコンテンツを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.FocusCuesVisibility">
+      <summary>コントロールのビジュアル要素のうち、フォーカスがある項目を表示するかどうかを示す値を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.DisabledCuesVisibility">
+      <summary>コントロールのビジュアル要素のうち、無効になっている項目を表示するかどうかを示す値を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.IsFocused">
+      <summary>コントロールにフォーカスがある場合は、true を返します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.ValidationDecoratorStyle">
+      <summary>
+        内部の
+        <see cref="T:C1.WPF.C1ValidationDecorator" />に適用されるスタイルを取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.MouseOverBrush">
+      <summary>
+        マウスがあるコントロールを強調表示するために使用される
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.PressedBrush">
+      <summary>
+        クリックされたボタンを描画するために使用される
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.FocusBrush">
+      <summary>
+        フォーカスがあるコントロールを強調表示するために使用される
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.ButtonBackground">
+      <summary>
+        コントロール内のボタンの背景に割り当てられる
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DatePicker.ButtonForeground">
+      <summary>
+        コントロール内のボタンの前景に割り当てられる
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.DateTimeEditors.C1TimeEditor">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1TimeEditor" />コントロールを使用して、さまざまなフォーマットで
+        <see cref="T:System.TimeSpan" />値を編集できます。
+      </summary>
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1TimeEditor" />コントロールを使用して、さまざまなフォーマットで
+        <see cref="T:System.TimeSpan" />値を編集できます。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1TimeEditor.OnCreateAutomationPeer">
+      <summary>コントロールのテストに使用される AutomationPeer を取得します。</summary>
+      <returns>コントロールのテストに使用される AutomationPeer。</returns>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1TimeEditor.ChangeVisualStateCommon(System.Boolean)">
+      <summary>Common 表示状態グループの現在の表示状態をオブジェクトのプロパティに一致するように更新します。</summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.ValueProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.Value" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1TimeEditor.OnTextValidationError(C1.WPF.DateTimeEditors.TextValidationErrorEventArgs)">
+      <summary>TextValidationError イベントを発生させます。</summary>
+      <param name="e">イベントデータを含む DatePickerDateValidationErrorEventArgs。</param>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1TimeEditor.OnValueChanged(C1.WPF.DateTimeEditors.NullablePropertyChangedEventArgs{System.TimeSpan})">
+      <summary>
+        <see cref="E:C1.WPF.DateTimeEditors.C1TimeEditor.ValueChanged" />イベントを発生させます。
+      </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1TimeEditor.GetCurrentDateTimeFormat">
+      <summary>現在の日時書式を取得します。</summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1TimeEditor.GetCurrentDateTimeFormat(System.Windows.FrameworkElement)">
+      <summary>指定された要素の Language プロパティの値に基づいて、現在の日時書式を取得します。</summary>
+      <param name="element">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1TimeEditor.GetGregorianCulture(System.Globalization.CultureInfo)">
+      <summary>指定されたカルチャのカレンダーがグレゴリオ暦でない場合は、オプションカレンダーからローカライズされたグレゴリオ暦を検索し、グレゴリオ暦を含む新しいカルチャを返します。</summary>
+      <param name="culture">
+      </param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1TimeEditor.ToString">
+      <summary>選択された日付のテキスト表現を提供します。</summary>
+      <returns>選択された日付のテキスト表現。または、SelectedDate が null 参照の場合は 空文字列。</returns>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1TimeEditor.ChangeVisualStateButtonsVisibility(System.Boolean)">
+      <summary>ButtonsVisibility 表示状態グループの現在の表示状態をオブジェクトのプロパティに一致するように更新します。</summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1TimeEditor.ChangeVisualStateFocus(System.Boolean)">
+      <summary>Focus 表示状態グループの現在の表示状態をオブジェクトのプロパティに一致するように更新します。</summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.AllowNullProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.AllowNull" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.CaretBrushProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.CaretBrush" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.CornerRadiusProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.CornerRadius" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.CustomFormatProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.CustomFormat" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.CycleChangesOnBoundariesProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.CycleChangesOnBoundaries" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.DelayProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.Delay" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.FormatProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.Format" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.HandleUpDownKeysProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.HandleUpDownKeys" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.IncrementProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.Increment" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.IntervalProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.Interval" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.IsReadOnlyProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.IsReadOnly" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.MaskProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.Mask" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.MaximumProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.Maximum" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.MinimumProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.Minimum" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.PromptProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.Prompt" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.SelectionBackgroundProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.SelectionBackground" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.SelectionForegroundProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.SelectionForeground" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.ShowButtonsProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.ShowButtons" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.WatermarkProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.Watermark" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.FocusCuesVisibilityProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.FocusCuesVisibility" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.DisabledCuesVisibilityProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.DisabledCuesVisibility" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.IsFocusedProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.IsFocused" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.ValidationDecoratorStyleProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.ValidationDecoratorStyle" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.MouseOverBrushProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.MouseOverBrush" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.PressedBrushProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.PressedBrush" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.FocusBrushProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.FocusBrush" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.ButtonBackgroundProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.ButtonBackground" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditor.ButtonForegroundProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.ButtonForeground" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1TimeEditor.#ctor">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1TimeEditor" />の新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1TimeEditor.OnApplyTemplate">
+      <summary>関連するコントロールのパーツを参照できるように、コントロールのテンプレートをロードします。</summary>
+      <remarks>
+        このメソッドは、アプリケーションコードや内部処理（再構築レイアウトパスなど）が
+        <see cref="M:ApplyTemplate" />メソッドを呼び出すときに必ず呼び出されます。
+      </remarks>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1TimeEditor.IsMouseOverChanged">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.IsMouseOver" />プロパティが変更されたときに発生するイベントです。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.Value">
+      <summary>
+        <see cref="T:C1.Silverlight.DateTimeEditors.C1TimeEditor" />の TimeSpan 値を取得または設定します。
+      </summary>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1TimeEditor.TextValidationError">
+      <summary>解析できないとき、または選択された TimeSpan が有効でないときに発生します。</summary>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1TimeEditor.ValueChanged">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1TimeEditor.Value" />プロパティが変化すると発生します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.AllowNull">
+      <summary>ユーザーが null 値を入力できるかどうかを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.CaretBrush">
+      <summary>
+        入力コントロールの点滅カーソルの
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.CornerRadius">
+      <summary>要素の角を丸める度合いを表す値を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.CustomFormat">
+      <summary>カスタム日付/時刻書式文字列を取得または設定します。</summary>
+      <remarks>デフォルトは null です。</remarks>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.CycleChangesOnBoundaries">
+      <summary>Value プロパティが Minimum または Maximum プロパティの値と等しい場合に、アップ/ダウンボタンまたは矢印キーを使って値を変更する際の C1TimeEditor の動作を決定します。デフォルトは true です。</summary>
+      <remarks>デフォルトでは、C1TimeEditor.Value プロパティが C1TimeEditor.Maximum プロパティの値に達した後にアップボタンをクリックすると、C1TimeEditor.Value プロパティの値は C1TimeEditor.Minimum プロパティの値に変化します。CycleChangesOnBoundaries プロパティの値が false の場合は、C1TimeEditor.Value プロパティが C1TimeEditor.Maximum プロパティの値と等しくなった後にアップボタンをクリックしても、すべて無視されます。ダウンボタンと Minimum プロパティについても、動作は同じです。</remarks>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.Delay">
+      <summary>［Increase］および［Decrease］ボタンの遅延を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.Format">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1TimeEditor" />コントロールに表示される TimeSpan 書式を指定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.HandleUpDownKeys">
+      <summary>コントロールが上/下矢印キー、［PageUp］キー、［PageDown］キーを処理するかどうかを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.Increment">
+      <summary>ユーザーが［↑］/［↓］キーを押したときに適用されるインクリメント値を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.Interval">
+      <summary>［Increase］および［Decrease］ボタンに適用する、クリック動作のリピートが開始された後のリピート間隔をミリ秒単位で取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.IsReadOnly">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1TimeEditor" />が読み取り専用かどうかを決定する値を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.Mask">
+      <summary>入力マスクを取得または設定します。</summary>
+      <remarks>
+        <para>マスクは、各入力位置で使用できる文字の種類を決定する文字列です。</para>
+        <para>有効なマスク文字は次のとおりです。</para>
+        <para>
+          <b>0</b>数字（０～９）
+        </para>
+        <para>
+          <b>9</b>数字またはスペース
+        </para>
+        <para>
+          <b>#</b>数字、スペース、または符号（+/-）
+        </para>
+        <para>
+          <b>L</b>英字
+        </para>
+        <para>
+          <b>?</b>英字またはスペース
+        </para>
+        <para>
+          <b>A</b>英字または数字
+        </para>
+        <para>
+          <b>a</b>英字、数字、またはスペース
+        </para>
+        <para>
+          <b>&amp;</b>任意の文字
+        </para>
+        <para>
+          <b>.</b>ローカライズされた小数点記号
+        </para>
+        <para>
+          <b>,</b>ローカライズされた３桁ごとの区切り記号
+        </para>
+        <para>
+          <b>:</b>ローカライズされた時刻の区切り記号
+        </para>
+        <para>
+          <b>/</b>ローカライズされた日付の区切り記号
+        </para>
+        <para>その他の文字はリテラルとして扱われます。リテラル文字はコントロールに表示されますが、編集できません。</para>
+        <para>たとえば、マスク "000-0000" を指定すると、４桁目は常にダッシュになり、それ以外は数字のみを入力できます。</para>
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.Maximum">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1TimeEditor" />に入力できる最大値を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.Minimum">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1TimeEditor" />コントロールに入力できる最小値を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.Prompt">
+      <summary>ユーザーが入力する領域を示すために使用する文字を取得または設定します。</summary>
+      <remarks>デフォルト値は "_" です。</remarks>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.ShowButtons">
+      <summary>Increment または Decrement のボタンを表示または非表示にします。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.Watermark">
+      <summary>ウォーターマークのコンテンツを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.FocusCuesVisibility">
+      <summary>コントロールのビジュアル要素のうち、フォーカスがあるものを表示するかどうかを示す値を取得します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.DisabledCuesVisibility">
+      <summary>コントロールのビジュアル要素のうち、無効になっているものを表示するかどうかを示す値を取得します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.IsFocused">
+      <summary>コントロールにフォーカスがある場合は、true を返します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.ValidationDecoratorStyle">
+      <summary>
+        内部の
+        <see cref="T:C1.WPF.C1ValidationDecorator" />に適用されるスタイルを取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.MouseOverBrush">
+      <summary>
+        マウスがあるコントロールを強調表示するために使用される
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.PressedBrush">
+      <summary>
+        クリックされたボタンを描画するために使用される
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.FocusBrush">
+      <summary>
+        フォーカスがあるコントロールを強調表示するために使用される
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.ButtonBackground">
+      <summary>
+        コントロール内のボタンの背景に割り当てられる
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1TimeEditor.ButtonForeground">
+      <summary>
+        コントロール内のボタンの前景に割り当てられる
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.DateTimeEditors.C1DateTimePicker">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DateTimePicker" />コントロールでは
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateTime" />値を編集できます。
+      </summary>
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DateTimePicker" />コントロールでは
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateTime" />値を編集できます。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DateTimePicker.OnCreateAutomationPeer">
+      <summary>コントロールのテストに使用される AutomationPeer を取得します。</summary>
+      <returns>コントロールのテストに使用される AutomationPeer。</returns>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DateTimePicker.ChangeVisualStateCommon(System.Boolean)">
+      <summary>Common 表示状態グループの現在の表示状態をオブジェクトのプロパティに一致するように更新します。</summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.DateTimeProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateTime" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.MinDateProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.MinDate" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.MaxDateProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.MaxDate" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.CaretBrushProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.CaretBrush" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DateTimePicker.FinalizeEditing">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateTime" />プロパティ値の更新を実行します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DateTimePicker.OnSelectionCommitted">
+      <summary>SelectionCommitted イベントを発生させます。</summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DateTimePicker.OnDateTimeChanged(C1.WPF.DateTimeEditors.NullablePropertyChangedEventArgs{System.DateTime})">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateTime" />イベントを発生させます。
+      </summary>
+      <param name="e">
+      </param>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.TimeFormatProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.TimeFormat" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DateTimePicker.ToString">
+      <summary>DateTime プロパティのテキスト表現を提供します。</summary>
+      <returns>選択された日付のテキスト表現。または、DateTime が null 参照の場合は 空文字列。</returns>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DateTimePicker.ChangeVisualStateFocus(System.Boolean)">
+      <summary>Focus 表示状態グループの現在の表示状態をオブジェクトのプロパティに一致するように更新します。</summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.AllowNullProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.AllowNull" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.CornerRadiusProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.CornerRadius" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.CustomDateFormatProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.CustomDateFormat" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.CustomTimeFormatProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.CustomTimeFormat" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.DateFormatProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateFormat" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.DateMaskProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateMask" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.DateWatermarkProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateWatermark" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.EditModeProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.EditMode" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.FirstDayOfWeekProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.FirstDayOfWeek" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.IsReadOnlyProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.IsReadOnly" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.MinDatePickerWidthProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.MinDatePickerWidth" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.MinTimeEditorWidthProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.MinTimeEditorWidth" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.PromptProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.Prompt" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.SelectionBackgroundProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.SelectionBackground" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.SelectionForegroundProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.SelectionForeground" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.SeparatorWidthProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.SeparatorWidth" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.TimeIncrementProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.TimeIncrement" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.TimeMaskProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.TimeMask" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.TimeWatermarkProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.TimeWatermark" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.FocusCuesVisibilityProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.FocusCuesVisibility" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.DisabledCuesVisibilityProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DisabledCuesVisibility" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.IsFocusedProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.IsFocused" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.ValidationDecoratorStyleProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.ValidationDecoratorStyle" />依存関係プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.MouseOverBrushProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.MouseOverBrush" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.PressedBrushProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.PressedBrush" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.FocusBrushProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.FocusBrush" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.ButtonBackgroundProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.ButtonBackground" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePicker.ButtonForegroundProperty">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.ButtonForeground" />依存プロパティを識別します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DateTimePicker.#ctor">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DateTimePicker" />の新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.C1DateTimePicker.OnApplyTemplate">
+      <summary>関連するコントロールのパーツを参照できるように、コントロールのテンプレートをロードします。</summary>
+      <remarks>
+        このメソッドは、アプリケーションコードや内部処理（再構築レイアウトパスなど）が
+        <see cref="M:ApplyTemplate" />メソッドを呼び出すときに必ず呼び出されます。
+      </remarks>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1DateTimePicker.IsMouseOverChanged">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.IsMouseOver" />プロパティが変更されたときに発生するイベントです。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateTime">
+      <summary>コントロールで選択されている DateTime を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.MinDate">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DateTimePicker" />コントロールに入力できる DateTime の最小値を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.MaxDate">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DateTimePicker" />に入力できる DateTime の最大値を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.CaretBrush">
+      <summary>
+        入力コントロールの点滅カーソルの
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.IsDropDownOpen">
+      <summary>ドロップダウンカレンダーが開いているか、閉じているかを示す値を取得します。</summary>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1DateTimePicker.SelectionCommitted">
+      <summary>SelectionCommitted イベントは、新しい DateTime プロパティ値がコミットされると発生します。</summary>
+      <remarks>エンドユーザーがキーボードを使用してドロップダウンカレンダーを操作している間に DateTime プロパティが変更される場合があります。この場合は、DateTimeChanged イベントが何度も発生します。SelectionCommitted イベントは、ドロップダウンカレンダーを閉じるときに一度だけ発生します。ドロップダウンカレンダーを使用せずに DateTime プロパティが変更された場合は、SelectionCommitted イベントと DateTimeChanged イベントが一度ずつ発生します。</remarks>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1DateTimePicker.DateValidationError">
+      <summary>DatePicker に入力されたテキストを解析できないとき、または選択された Date が有効でないときに発生します。</summary>
+    </member>
+    <member name="E:C1.WPF.DateTimeEditors.C1DateTimePicker.DateTimeChanged">
+      <summary>
+        <see cref="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateTime" />プロパティが変化すると発生します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.TimeFormat">
+      <summary>選択された時刻の表示に使用する C1TimeEditorFormat 形式を指定します。</summary>
+      <remarks>このプロパティに C1TimeEditorFormat.TimeSpan 値は有効ではありません。TimeFormat プロパティを C1TimeEditorFormat.TimeSpan 値に設定しても、C1DateTimePicker コントロールは以前の設定値を使用します。</remarks>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.BlackoutDates">
+      <summary>選択できない日を取得します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.AllowNull">
+      <summary>ユーザーが null 値を入力できるかどうかを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.CornerRadius">
+      <summary>要素の角を丸める度合いを表す値を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.CustomDateFormat">
+      <summary>カスタム日付書式文字列を取得または設定します。</summary>
+      <remarks>デフォルトは null です。</remarks>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.CustomTimeFormat">
+      <summary>カスタム日付書式文字列を取得または設定します。</summary>
+      <remarks>デフォルトは null です。</remarks>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateFormat">
+      <summary>選択された日付の表示に使用する DatePickerFormat 形式を指定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateMask">
+      <summary>日付部分の入力マスクを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DateWatermark">
+      <summary>日付部分のウォーターマークのコンテンツを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.EditMode">
+      <summary>編集モードを定義します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.FirstDayOfWeek">
+      <summary>週の始まりと見なされる日を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.IsReadOnly">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DateTimePicker" />が読み取り専用かどうかを決定する値を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.MinDatePickerWidth">
+      <summary>日付ピッカーパーツの最小幅制約を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.MinTimeEditorWidth">
+      <summary>時刻エディタパーツの最小幅制約を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.Prompt">
+      <summary>ユーザーが入力する領域を示すために使用する文字を取得または設定します。</summary>
+      <remarks>デフォルト値は "_" です。</remarks>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.SeparatorWidth">
+      <summary>日付部分と時刻部分の間のスペースの幅を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.TimeIncrement">
+      <summary>時刻部分でユーザーが［↑］/［↓］キーを押したときに適用されるインクリメント値を取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.TimeMask">
+      <summary>時刻部分の入力マスクを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.TimeWatermark">
+      <summary>時間部分のウォーターマークのコンテンツを取得または設定します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.FocusCuesVisibility">
+      <summary>コントロールのビジュアル要素のうち、フォーカスがあるものを表示するかどうかを示す値を取得します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.DisabledCuesVisibility">
+      <summary>コントロールのビジュアル要素のうち、無効になっているものを表示するかどうかを示す値を取得します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.IsFocused">
+      <summary>コントロールにフォーカスがある場合は、true を返します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.ValidationDecoratorStyle">
+      <summary>
+        内部の
+        <see cref="T:C1.WPF.C1ValidationDecorator" />に適用されるスタイルを取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.MouseOverBrush">
+      <summary>
+        マウスがあるコントロールを強調表示するために使用される
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.PressedBrush">
+      <summary>
+        クリックされたボタンを描画するために使用される
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.FocusBrush">
+      <summary>
+        フォーカスがあるコントロールを強調表示するために使用される
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.ButtonBackground">
+      <summary>
+        コントロール内のボタンの背景に割り当てられる
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.C1DateTimePicker.ButtonForeground">
+      <summary>
+        コントロール内のボタンの前景に割り当てられる
+        <see cref="T:System.Windows.Media.Brush" />を取得または設定します。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.DateTimeEditors.C1DatePickerFormat">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DatePicker" />コントロールに表示される DateTime 書式を指定します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePickerFormat.Long">
+      <summary>省略されていない曜日と月の名前を使用して日付を表示することを指定します。</summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePickerFormat.Short">
+      <summary>省略形の曜日と月の名前を使用して日付を表示することを指定します。</summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DatePickerFormat.Custom">
+      <summary>C1DatePicker.CustomFormat プロパティで決定されるデータ形式を指定します。</summary>
+    </member>
+    <member name="T:C1.WPF.DateTimeEditors.C1DateTimePickerEditMode">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DateTimePicker" />編集モードを指定します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePickerEditMode.Date">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DateTimePicker" />コントロールは、日付部分のみを表示します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePickerEditMode.Time">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DateTimePicker" />コントロールは、時間部分のみを表示します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1DateTimePickerEditMode.DateTime">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1DateTimePicker" />コントロールには日付および時刻部分が表示されます。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.DateTimeEditors.NullableDateTimeConverter">
+      <summary>Nullable{T} 型との相互の変換を行います（ジェネリックには DateTime 型制約を使用）。</summary>
+    </member>
+    <member name="T:C1.WPF.DateTimeEditors.DateTimeTypeConverter">
+      <summary>DateTime 型との相互の変換を行います。</summary>
+    </member>
+    <member name="T:C1.WPF.DateTimeEditors.C1TimeEditorFormat">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1TimeEditor" />コントロールに表示される TimeSpan 書式を指定します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditorFormat.ShortTime">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1TimeEditor" />コントロールには短い書式の時刻が表示されます。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditorFormat.LongTime">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1TimeEditor" />コントロールには長い書式の時刻が表示されます。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditorFormat.TimeSpan">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1TimeEditor" />コントロールには時間間隔が表示されます（am/pm 指定子は表示されません）。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.DateTimeEditors.C1TimeEditorFormat.Custom">
+      <summary>
+        <see cref="T:C1.WPF.DateTimeEditors.C1TimeEditor" />コントロールの時刻の値がカスタム書式で表示されます。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.DateTimeEditors.TextValidationErrorEventArgs">
+      <summary>DateValidationError イベントのデータを提供します。</summary>
+    </member>
+    <member name="M:C1.WPF.DateTimeEditors.TextValidationErrorEventArgs.#ctor(System.Exception,System.String)">
+      <summary>TextValidationErrorEventArgs クラスの新しいインスタンスを初期化します。</summary>
+      <param name="exception">最初に TextValidationError イベントを発生させた例外。</param>
+      <param name="text">解析されていたテキスト。</param>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.TextValidationErrorEventArgs.Exception">
+      <summary>最初に TextValidationError イベントを発生させた例外を取得します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.TextValidationErrorEventArgs.Text">
+      <summary>TextValidationError イベントが発生したときに解析されていたテキストを取得します。</summary>
+    </member>
+    <member name="P:C1.WPF.DateTimeEditors.TextValidationErrorEventArgs.ThrowException">
+      <summary>例外を生成するかどうかを示す値を取得または設定します。</summary>
+    </member>
+    <member name="T:C1.WPF.DateTimeEditors.NullablePropertyChangedEventArgs`1">
+      <summary>
+        T が
+        <see cref="T:System.Nullable`1" />の場合の
+        <see cref="T:C1.WPF.PropertyChangedEventArgs`1" />クラスのラッパークラス。
+      </summary>
+      <typeparam name="T">構造体</typeparam>
+      <remarks>XAML でイベントハンドラを追加する際、VS 2010 はネストされたジェネリック属性を直接操作できないため、設計時にはこのクラスが必要です。</remarks>
+    </member>
+  </members>
+</doc>

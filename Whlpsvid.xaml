@@ -1,0 +1,96 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:apgc65wpf"
+        xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" x:Name="HelpWindow" x:Class="apgc65wpf.Whlpsvid"
+        mc:Ignorable="d"
+        Title="サーバー検索" Height="510" Width="821" Icon="Resources/titlelogo.ico" Loaded="Window_Loaded" BorderThickness="5" ResizeMode="NoResize" Initialized="HelpWindow_Initialized">
+    <Grid Background="#FFA0E0D1" Margin="-6,-7,-8,-8">
+
+        <TextBlock x:Name="tbSB2" TextAlignment="Right" HorizontalAlignment="Left" Margin="180,10,0,0" TextWrapping="Wrap" Text="OS：" VerticalAlignment="Top" Height="22" Width="70" FontFamily="Yu Gothic UI Semibold" FontWeight="Bold" />
+        <TextBox x:Name="txtOSID" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="22" Margin="255,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Background="#FFF4D3FD" IsReadOnly="True" KeyboardNavigation.TabNavigation="None" IsTabStop="False">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <ComboBox x:Name="cmbOS" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="292,10,0,0" VerticalAlignment="Top" Width="260" DropDownClosed="cmbOS_DropDownClosed">
+            <ComboBox.Effect>
+                <DropShadowEffect/>
+            </ComboBox.Effect>
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock><Run Text="{Binding osid, StringFormat=d4}"/><Run Text=" | "/><Run Text="{Binding osname}"/></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+
+        <TextBlock x:Name="tbSB11" TextAlignment="Right" HorizontalAlignment="Left" Margin="180,37,0,0" TextWrapping="Wrap" Text="用途１：" VerticalAlignment="Top" Height="22" Width="70" FontFamily="Yu Gothic UI Semibold" FontWeight="Bold"/>
+        <TextBox x:Name="txtUSETYPE1ID" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="22" Margin="255,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" Background="#FFF4D3FD" IsReadOnly="True" KeyboardNavigation.TabNavigation="None" IsTabStop="False">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <ComboBox x:Name="cmbUSETYPE1" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="292,37,0,0" VerticalAlignment="Top" Width="260" DropDownClosed="cmbUSETYPE1_DropDownClosed_1" Height="22">
+            <ComboBox.Effect>
+                <DropShadowEffect/>
+            </ComboBox.Effect>
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock><Run Text="{Binding usetypeid, StringFormat=d4}"/><Run Text=" | "/><Run Text="{Binding usetypename}"/></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock x:Name="tbSB1" TextAlignment="Right" HorizontalAlignment="Left" Margin="180,64,0,0" TextWrapping="Wrap" Text="サーバー名：" VerticalAlignment="Top" Height="22" Width="70" FontFamily="Yu Gothic UI Semibold" FontWeight="Bold"/>
+        <TextBox x:Name="txtSvName" HorizontalAlignment="Left" TabIndex="0" Height="22" Margin="255,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297" InputMethod.PreferredImeState="Off" FontFamily="MS Gothic" Padding="4,4,2,1">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <c1:C1FlexGrid x:Name="grSVSRCH" ItemsSource="{Binding}" AllowSorting="False" HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top" Height="366" Width="777" ShowMarquee="True" RowBackground="Transparent" AlternatingRowBackground="Transparent" CursorBackground="Transparent" EditorBackground="Transparent" TopLeftCellBackground="#FFC9C9C9" RowHeaderBackground="#FFEDEDED" RowHeaderSelectedBackground="#FFFFD58D" GridLinesBrush="#FFD0D7E5" HeaderGridLinesBrush="#FFB6B6B6" SelectionBackground="#FFEAECF5" GridLinesVisibility="All" IsReadOnly="True" MouseDoubleClick="grSVSRCH_MouseDoubleClick">
+            <c1:C1FlexGrid.Effect>
+                <DropShadowEffect/>
+            </c1:C1FlexGrid.Effect>
+            <c1:C1FlexGrid.ColumnHeaderSelectedBackground>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF8D79B" Offset="0"/>
+                    <GradientStop Color="#FFF1C15F" Offset="1"/>
+                </LinearGradientBrush>
+            </c1:C1FlexGrid.ColumnHeaderSelectedBackground>
+            <c1:C1FlexGrid.ColumnHeaderBackground>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF6F6F6" Offset="0"/>
+                    <GradientStop Color="#FFDEDEDE" Offset="1"/>
+                </LinearGradientBrush>
+            </c1:C1FlexGrid.ColumnHeaderBackground>
+        </c1:C1FlexGrid>
+        <Button x:Name="btSRCH" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top" Width="68" Click="btSRCH_Click" Height="40" FontSize="16" Background="#FFE67B7B">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image x:Name="Image24_png" Height="35" Source="Image24.png" Stretch="None" Width="63"/>
+        </Button>
+        <Button x:Name="btExit" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="68" Height="40" Background="#FF2CAE4A" Click="btExit_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image x:Name="Image23_png" Height="35" Source="Image23.png" Stretch="None" Width="63"/>
+        </Button>
+        <Button x:Name="btCancel" HorizontalAlignment="Left" Margin="95,32,0,0" VerticalAlignment="Top" Width="68" Height="40" Background="#FF6888DC" Click="btCancel_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Image x:Name="Image25_png" Height="35" Source="Image25.png" Stretch="Fill" Width="63"/>
+        </Button>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="32" Margin="587,9,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200" Visibility="Hidden"/>
+        <CheckBox x:Name="chkVM" Content="仮想マシン" HorizontalAlignment="Left" Margin="614,42,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+
+    </Grid>
+
+</Window>

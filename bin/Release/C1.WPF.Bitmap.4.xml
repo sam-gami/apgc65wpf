@@ -1,0 +1,2700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>C1.WPF.Bitmap.4</name>
+  </assembly>
+  <members>
+    <member name="T:C1.WPF.Bitmap.C1Bitmap">
+      <summary>
+        圧縮解除されたビットマップを表します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.#ctor">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.C1Bitmap" /> クラスの新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.#ctor(C1.Util.DX.WIC.ImagingFactory)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.C1Bitmap" /> クラスの新しいインスタンスを初期化します。
+      </summary>
+      <param name="imagingFactory">既存のイメージファクトリ。ファクトリの重複を避けるため。</param>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.IsDisposed">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.C1Bitmap" /> クラスのインスタンスが廃棄されたかどうかを示す値を取得します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Dispose">
+      <summary>
+        使用されているリソースをすべてクリーンアップします。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Dispose(System.Boolean)">
+      <summary>
+        マネージリソースとアンマネージリソースに対してクリーンアップ操作を実行します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Finalize">
+      <summary>
+        アンマネージリソースに対してクリーンアップ操作を実行します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.ImagingFactory">
+      <summary>
+        このビットマップで使用されるイメージファクトリを取得します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.NativeBitmap">
+      <summary>
+        内部画像を表す IWICBitmap を取得します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.HasImage">
+      <summary>
+        画像をロードするかどうかを示す値を取得します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.HasMetadata">
+      <summary>
+        画像メタデータをロードするかどうかを示す値を取得します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.ContainerFormat">
+      <summary>
+        ストリームからロードされた画像のコンテナ形式を取得します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.PixelFormat">
+      <summary>
+        画像のピクセル形式を取得します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.PixelWidth">
+      <summary>
+        画像のピクセル幅を取得します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.PixelHeight">
+      <summary>
+        画像のピクセル高さを取得します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.DpiX">
+      <summary>
+        x 軸の dpi 解像度を取得します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.DpiY">
+      <summary>
+        y 軸の dpi 解像度を取得します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.ExtendedMetadata">
+      <summary>
+        グローバルメタデータ辞書とフレームメタデータ辞書をロードするかどうかを取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.GlobalMetadata">
+      <summary>
+        GIF 画像のグローバルレベルメタデータを取得します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.FrameMetadata">
+      <summary>
+        JPG、PNG、JPEG-XR、GIF、TIFF の各画像のフレームレベルメタデータを取得します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.DiscardImage">
+      <summary>
+        内部画像を解放し、すべてのメタデータをクリアします。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SetDpi(System.Double)">
+      <summary>
+        画像の物理解像度を変更します。
+      </summary>
+      <param name="dpi">水平解像度と垂直解像度。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SetDpi(System.Double,System.Double)">
+      <summary>
+        画像の物理解像度を変更します。
+      </summary>
+      <param name="dpiX">水平解像度。</param>
+      <param name="dpiY">垂直解像度。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Load(System.IO.Stream,C1.WPF.Bitmap.BaseTransform[])">
+      <summary>
+        System.IO.Stream から画像をロードします。
+      </summary>
+      <param name="stream">入力ストリーム。</param>
+      <param name="transforms">ロードする画像の変換チェーン。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Load(System.IO.Stream,C1.WPF.Bitmap.ContainerFormat,System.Nullable{C1.WPF.Bitmap.ImageRect},C1.WPF.Bitmap.BaseTransform[])">
+      <summary>
+        System.IO.Stream から画像をロードします。
+      </summary>
+      <param name="stream">入力ストリーム。</param>
+      <param name="containerFormat">画像コンテナ形式。形式を自動的に検出するには、Unknown を使用します。</param>
+      <param name="imageRect">すべての変換を終了した後の画像のクリッピング四角形。</param>
+      <param name="transforms">ロードする画像の変換チェーン。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.LoadMetadata(System.IO.Stream,C1.WPF.Bitmap.ContainerFormat)">
+      <summary>
+        System.IO.Stream から画像のメタデータをロードします。
+      </summary>
+      <param name="stream">入力ストリーム。</param>
+      <param name="containerFormat">画像コンテナ形式。形式を自動的に検出するには、Unknown を使用します。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Load(System.String,C1.WPF.Bitmap.BaseTransform[])">
+      <summary>
+        画像をファイルからロードします。
+      </summary>
+      <param name="fileName">入力ファイル名。</param>
+      <param name="transforms">ロードする画像の変換チェーン。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Load(System.String,C1.WPF.Bitmap.ContainerFormat,System.Nullable{C1.WPF.Bitmap.ImageRect},C1.WPF.Bitmap.BaseTransform[])">
+      <summary>
+        画像をファイルからロードします。
+      </summary>
+      <param name="fileName">入力ファイル名。</param>
+      <param name="containerFormat">画像コンテナ形式。形式を自動的に検出するには、Unknown を使用します。</param>
+      <param name="imageRect">すべての変換を終了した後の画像のクリッピング四角形。</param>
+      <param name="transforms">ロードする画像の変換チェーン。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.LoadMetadata(System.String,C1.WPF.Bitmap.ContainerFormat)">
+      <summary>
+        ファイルから画像のメタデータをロードします。
+      </summary>
+      <param name="fileName">入力ファイル名。</param>
+      <param name="containerFormat">画像コンテナ形式。形式を自動的に検出するには、Unknown を使用します。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Save(System.IO.Stream,C1.WPF.Bitmap.ContainerFormat,C1.WPF.Bitmap.BaseOptions)">
+      <summary>
+        指定された形式とオプションを使用して、System.IO.Stream に画像を保存します。
+      </summary>
+      <param name="stream">出力ストリーム。</param>
+      <param name="format">画像エンコーダを決定するコンテナ形式。</param>
+      <param name="options">指定された画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SaveAsBmp(System.IO.Stream,C1.WPF.Bitmap.BmpOptions)">
+      <summary>
+        System.IO.Stream に画像を BMP 形式で保存します。
+      </summary>
+      <param name="stream">出力ストリーム。</param>
+      <param name="options">BMP 画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SaveAsGif(System.IO.Stream,C1.WPF.Bitmap.GifOptions)">
+      <summary>
+        System.IO.Stream に画像を GIF 形式で保存します。
+      </summary>
+      <param name="stream">出力ストリーム。</param>
+      <param name="options">GIF 画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SaveAsJpeg(System.IO.Stream,C1.WPF.Bitmap.JpegOptions)">
+      <summary>
+        System.IO.Stream に画像を JPEG 形式で保存します。
+      </summary>
+      <param name="stream">出力ストリーム。</param>
+      <param name="options">JPEG 画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SaveAsJpegXR(System.IO.Stream,C1.WPF.Bitmap.JpegXROptions)">
+      <summary>
+        System.IO.Stream に画像を JPEG XR 形式で保存します。
+      </summary>
+      <param name="stream">出力ストリーム。</param>
+      <param name="options">JPEG XR 画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SaveAsPng(System.IO.Stream,C1.WPF.Bitmap.PngOptions)">
+      <summary>
+        System.IO.Stream に画像を PNG 形式で保存します。
+      </summary>
+      <param name="stream">出力ストリーム。</param>
+      <param name="options">PNG 画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SaveAsTiff(System.IO.Stream,C1.WPF.Bitmap.TiffOptions)">
+      <summary>
+        System.IO.Stream に画像を TIFF 形式で保存します。
+      </summary>
+      <param name="stream">出力ストリーム。</param>
+      <param name="options">TIFF 画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Save(System.String,C1.WPF.Bitmap.ContainerFormat,C1.WPF.Bitmap.BaseOptions)">
+      <summary>
+        指定された形式とオプションを使用して、ファイルに画像を保存します。
+      </summary>
+      <param name="fileName">出力ファイル名。</param>
+      <param name="format">画像エンコーダを決定するコンテナ形式。</param>
+      <param name="options">指定された画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SaveAsBmp(System.String,C1.WPF.Bitmap.BmpOptions)">
+      <summary>
+        ファイルに画像を BMP 形式で保存します。
+      </summary>
+      <param name="fileName">出力ファイル名。</param>
+      <param name="options">BMP 画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SaveAsGif(System.String,C1.WPF.Bitmap.GifOptions)">
+      <summary>
+        ファイルに画像を GIF 形式で保存します。
+      </summary>
+      <param name="fileName">出力ファイル名。</param>
+      <param name="options">GIF 画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SaveAsJpeg(System.String,C1.WPF.Bitmap.JpegOptions)">
+      <summary>
+        ファイルに画像を JPEG 形式で保存します。
+      </summary>
+      <param name="fileName">出力ファイル名。</param>
+      <param name="options">JPEG 画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SaveAsJpegXR(System.String,C1.WPF.Bitmap.JpegXROptions)">
+      <summary>
+        ファイルに画像を JPEG XR 形式で保存します。
+      </summary>
+      <param name="fileName">出力ファイル名。</param>
+      <param name="options">JPEG XR 画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SaveAsPng(System.String,C1.WPF.Bitmap.PngOptions)">
+      <summary>
+        ファイルに画像を PNG 形式で保存します。
+      </summary>
+      <param name="fileName">出力ファイル名。</param>
+      <param name="options">PNG 画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SaveAsTiff(System.String,C1.WPF.Bitmap.TiffOptions)">
+      <summary>
+        ファイルに画像を TIFF 形式で保存します。
+      </summary>
+      <param name="fileName">出力ファイル名。</param>
+      <param name="options">TIFF 画像エンコーダのオプション。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ToByteArray">
+      <summary>
+        画像バッファをバイト配列に保存します（パレットとメタデータ情報を除く）。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ToByteArray(C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        画像バッファの一部をバイト配列に保存します。
+      </summary>
+      <param name="srcRect">画像内のソース四角形。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ExportFragment(System.IntPtr,C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        画像のフラグメントをアンマネージメモリブロックにコピーします。
+      </summary>
+      <param name="dstPtr">アンマネージメモリブロックへのポインタまたは IntPtr.Zero。</param>
+      <param name="srcRect">画像内のソース四角形。</param>
+      <returns>要求された画像フラグメント内のバイト数を返します。</returns>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ToWriteableBitmap">
+      <summary>
+        画像から WriteableBitmap を作成します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ToWriteableBitmap(C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        画像の一部から WriteableBitmap を作成します。
+      </summary>
+      <param name="srcRect">画像内のソース四角形。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ExportFragment(System.Windows.Media.Imaging.WriteableBitmap,C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        画像のフラグメントを指定された WriteableBitmap にコピーします。
+      </summary>
+      <param name="writeableBitmap">コピー先の WriteableBitmap。</param>
+      <param name="srcRect">画像内のソース四角形。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ToD2DBitmap1(C1.Util.DX.Direct2D.DeviceContext,C1.Util.DX.Direct2D.BitmapOptions,C1.WPF.Bitmap.BaseTransform[])">
+      <summary>
+        画像データから D2D.Bitmap1 を作成します。
+      </summary>
+      <param name="context">D2D ビットマップの作成に使用されるデバイスコンテキスト。</param>
+      <param name="bitmapOptions">ビットマップの使用方法を指定します。</param>
+      <param name="transforms">変換チェーン。画像をコピーするだけの場合は空に設定できます。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ImportAsFragment(C1.WPF.Bitmap.C1Bitmap,System.Int32,System.Int32)">
+      <summary>
+        画像内の指定された位置に別の C1Bitmap をロードします。
+      </summary>
+      <param name="bitmap">ソースビットマップ。</param>
+      <param name="dstX">目的のビットマップ内の X 座標。</param>
+      <param name="dstY">目的のビットマップ内の Y 座標。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Import(System.Byte[],System.Int32,System.Int32,C1.WPF.Bitmap.PixelFormat)">
+      <summary>
+        ピクセルバッファを含むバイト配列から画像をロードします。
+      </summary>
+      <param name="bytes">ピクセルバッファを含むソースバイト配列。</param>
+      <param name="width">画像の幅。</param>
+      <param name="height">画像の高さ。</param>
+      <param name="pixelFormat">画像のピクセル形式。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ImportAsFragment(System.Byte[],C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        バイト配列からピクセルバッファを画像内の指定された位置にロードします。
+      </summary>
+      <param name="bytes">ピクセルバッファを含むソースバイト配列。</param>
+      <param name="dstRect">目的のビットマップ内の四角形。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Import(System.IntPtr,System.Int32,System.Int32,C1.WPF.Bitmap.PixelFormat)">
+      <summary>
+        IntPtr でポイントされたアンマネージメモリブロックから画像をロードします。
+      </summary>
+      <param name="srcPtr">アンマネージメモリブロックの始点へのポインタ。</param>
+      <param name="width">画像の幅。</param>
+      <param name="height">画像の高さ。</param>
+      <param name="pixelFormat">画像のピクセル形式。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ImportAsFragment(System.IntPtr,C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        アンマネージメモリブロックを画像内の指定された位置にコピーします。
+      </summary>
+      <param name="srcPtr">アンマネージメモリブロックの始点へのポインタ。</param>
+      <param name="dstRect">目的のビットマップ内の四角形。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Import(System.Windows.Media.Imaging.WriteableBitmap)">
+      <summary>
+        WriteableBitmap から画像をロードします。
+      </summary>
+      <param name="writeableBitmap">ソース WriteableBitmap。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ImportAsFragment(System.Windows.Media.Imaging.WriteableBitmap,System.Int32,System.Int32)">
+      <summary>
+        画像内の指定された位置に WriteableBitmap をロードします。
+      </summary>
+      <param name="writeableBitmap">ソース WriteableBitmap。</param>
+      <param name="dstX">目的のビットマップ内の X 座標。</param>
+      <param name="dstY">目的のビットマップ内の Y 座標。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Import(C1.Util.DX.Direct2D.Bitmap1)">
+      <summary>
+        （D2D.BitmapOptions.CpuRead で作成された）D2D.Bitmap1 から画像をロードします。
+      </summary>
+      <param name="d2dBitmap">D2D.BitmapOptions.CpuRead で作成されたソース D2D.Bitmap1 画像。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Import(C1.Util.DX.Direct2D.Bitmap1,C1.Util.DX.Direct2D.DeviceContext,C1.Util.DX.RectL)">
+      <summary>
+        D2D.Bitmap1 から画像をロードします。
+      </summary>
+      <param name="d2dBitmap">ソース D2D.Bitmap1 画像。</param>
+      <param name="context">D2D ビットマップの作成に使用されるデバイスコンテキスト。</param>
+      <param name="srcRect">d2dBitmap 内のソース四角形。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ImportAsFragment(C1.Util.DX.Direct2D.Bitmap1,C1.Util.DX.Direct2D.DeviceContext,C1.Util.DX.RectL,System.Int32,System.Int32)">
+      <summary>
+        D2D.Bitmap1 のフラグメントを画像内の指定された位置にロードします。
+      </summary>
+      <param name="d2dBitmap">ソース D2D.Bitmap1。</param>
+      <param name="context">D2D ビットマップの作成に使用されるデバイスコンテキスト。</param>
+      <param name="srcRect">d2dBitmap 内のソース四角形。</param>
+      <param name="dstX">目的のビットマップ内の X 座標。</param>
+      <param name="dstY">目的のビットマップ内の Y 座標。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.CreatePredefinedPalette(C1.WPF.Bitmap.PaletteType,System.Boolean)">
+      <summary>
+        PaletteType で指定された定義済みパレットの 1 つを作成し、オプションで透明色を追加します。
+      </summary>
+      <param name="paletteType">目的の定義済みパレットタイプ。</param>
+      <param name="addTransparentColor">パレットに追加するオプションの透明色。透明色が必要ない場合は、false を使用します。グレースケールまたは白黒パレットに初期化する場合は、このパラメータを false に設定します。</param>
+      <remarks>
+        256 エントリ未満のパレットの場合は、透明エントリがパレットの最後に追加されます。
+        したがって、16 色パレットは 17 色パレットになります。256 色パレットの場合は、定義済みパレット内の
+        最後のエントリが透明パレットエントリに置き換わります。
+      </remarks>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.CreatePaletteFromBitmap(System.Int32,System.Boolean)">
+      <summary>
+        ビットマップに基づいて計算された最適な値を使用してパレットを作成します。
+      </summary>
+      <param name="colorCount">パレットの初期化に使用する色の数。</param>
+      <param name="addTransparentColor">透明色を追加するかどうかを示す値。</param>
+      <remarks>
+        結果として生成されるパレットには、ビットマップ内の色を最適に表す、指定された数の色が含まれます。
+        このアルゴリズムは、参照ビットマップ内の各ピクセルの不透明 RGB 色値に
+        対して演算を行い、アルファ値は無視します。透明色が必要な場合は、
+        addTransparentColor パラメータを true に設定します。これにより、1 つ少ない数の最適な色が計算されて
+        colorCount が減り、完全に透明色エントリが 1 つ追加されます。
+      </remarks>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.GetPalette">
+      <summary>
+        インデックス付きピクセル形式の場合は、色テーブルを取得します。その他の形式の場合は null になります。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.SetPalette(C1.WPF.Bitmap.C1Bitmap.Palette)">
+      <summary>
+        ビットマップの色テーブルを設定します。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.C1Bitmap.Palette">
+      <summary>
+        インデックス付きピクセル形式のビットマップパレットを表します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Palette.#ctor">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.C1Bitmap" /> クラスの新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.Palette.PaletteType">
+      <summary>
+        関連付けられたビットマップのパレットタイプを取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.Palette.HasAlpha">
+      <summary>
+        パレットにアルファ透明色が含まれるかどうかを記述する値を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.C1Bitmap.Palette.Colors">
+      <summary>
+        パレット色のリストを取得します（変更可能）。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.BitsPerPixel(C1.WPF.Bitmap.PixelFormat)">
+      <summary>
+        指定された PixelFormat 列挙値の 1 ピクセルあたりビット数（bpp）を返します。
+      </summary>
+      <param name="pixelFormat">PixelFormat 列挙値。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.PixelFormatToGuid(C1.WPF.Bitmap.PixelFormat)">
+      <summary>
+        指定された PixelFormat 列挙値に対応する WIC ピクセル形式の GUID を返します。
+      </summary>
+      <param name="pixelFormat">PixelFormat 列挙値。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.PixelFormatFromGuid(System.Guid)">
+      <summary>
+        WIC ピクセル形式の GUID を PixelFormat 列挙値に変換します。
+      </summary>
+      <param name="pfGuid">WIC ピクセル形式の GUID。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.ToWPFPixelFormat(C1.WPF.Bitmap.PixelFormat)">
+      <summary>
+        指定された PixelFormat 値に対応する System.Windows.Media.PixelFormat 構造体を返します。
+      </summary>
+      <param name="pixelFormat">PixelFormat 列挙値。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.FromWPFPixelFormat(System.Windows.Media.PixelFormat)">
+      <summary>
+        System.Windows.Media.PixelFormat を PixelFormat 列挙値に変換します。
+      </summary>
+      <param name="pixelFormat">System.Windows.Media.PixelFormat 型のソース値。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.CanConvertTo(C1.WPF.Bitmap.PixelFormat)">
+      <summary>
+        現在のピクセル形式を目的のピクセル形式に変換できるかどうかを決定します。
+      </summary>
+      <param name="pixelFormat">目的のピクセル形式。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Transform(C1.WPF.Bitmap.BaseTransform[])">
+      <summary>
+        一連の変換を経た現在のビットマップのコピーとなる <see cref="T:C1.WPF.Bitmap.C1Bitmap" /> の新しいインスタンスを作成します。
+      </summary>
+      <param name="transforms">変換チェーン。画像をコピーするだけの場合は空に設定できます。</param>
+    </member>
+    <member name="T:C1.WPF.Bitmap.ContainerFormat">
+      <summary>
+        画像コンテナ形式を指定します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ContainerFormat.Unknown">
+      <summary>
+        不明な形式。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ContainerFormat.Bmp">
+      <summary>
+        BMP（Windows Bitmap Format）。BMP 仕様バージョン 5。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ContainerFormat.Gif">
+      <summary>
+        GIF（Graphics Interchange Format：グラフィック交換形式 89a）。GIF 仕様 89a/89m。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ContainerFormat.Ico">
+      <summary>
+        ICO（Icon Format：アイコン形式）。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ContainerFormat.Jpeg">
+      <summary>
+        JPEG（Joint Photographic Experts Group）。JFIF 仕様 1.02。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ContainerFormat.JpegXR">
+      <summary>
+        HD Photo。Windows Media Photo とも言います。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ContainerFormat.Png">
+      <summary>
+        PNG（Portable Network Graphics：ポータブルネットワークグラフィック）。PNG 仕様 1.2。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ContainerFormat.Tiff">
+      <summary>
+        TIFF（Tagged Image File Format）。TIFF 仕様 6.0。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.DitherType">
+      <summary>
+        ピクセル形式間の変換時に適用されるディザアルゴリズムのタイプを指定します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.DitherType.None">
+      <summary>
+        ディザを使用しない単色アルゴリズム。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.DitherType.Solid">
+      <summary>
+        ディザを使用しない単色アルゴリズム。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.DitherType.Ordered4x4">
+      <summary>
+        4x4 組織的ディザアルゴリズム。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.DitherType.Ordered8x8">
+      <summary>
+        8x8 組織的ディザアルゴリズム。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.DitherType.Ordered16x16">
+      <summary>
+        16x16 組織的ディザアルゴリズム。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.DitherType.Spiral4x4">
+      <summary>
+        4x4 螺旋ディザアルゴリズム。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.DitherType.Spiral8x8">
+      <summary>
+        8x8 螺旋ディザアルゴリズム。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.DitherType.DualSpiral4x4">
+      <summary>
+        4x4 2 重螺旋ディザアルゴリズム。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.DitherType.DualSpiral8x8">
+      <summary>
+        8x8 2 重螺旋ディザアルゴリズム。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.DitherType.ErrorDiffusion">
+      <summary>
+        誤差拡散アルゴリズム。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.InterpolationMode">
+      <summary>
+        画像の拡大時に使用するサンプリングモードまたはフィルタモードを指定します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.InterpolationMode.NearestNeighbor">
+      <summary>
+        ニアレストネイバー補間アルゴリズム。最近ピクセル補間または最近点補間とも言います。
+      </summary>
+      <remarks>
+        出力ピクセルには、その点が含まれるピクセルの値が割り当てられます。その他のピクセルは考慮されません。
+      </remarks>
+    </member>
+    <member name="F:C1.WPF.Bitmap.InterpolationMode.Linear">
+      <summary>
+        バイリニア補間アルゴリズム。
+      </summary>
+      <remarks>
+        出力ピクセル値は、2x2 グリッド内の最も近い 4 ピクセルの加重平均として計算されます。
+      </remarks>
+    </member>
+    <member name="F:C1.WPF.Bitmap.InterpolationMode.Cubic">
+      <summary>
+        バイキュービック補間アルゴリズム。
+      </summary>
+      <remarks>
+        出力ピクセル値は、4x4 グリッド内の最も近い 16 ピクセルの加重平均として計算されます。
+      </remarks>
+    </member>
+    <member name="F:C1.WPF.Bitmap.InterpolationMode.Fant">
+      <summary>
+        Fant リサンプリングアルゴリズム。
+      </summary>
+      <remarks>
+        目的のピクセル値は、新しいピクセルにマップされるすべてのピクセルの加重平均として計算されます。
+      </remarks>
+    </member>
+    <member name="F:C1.WPF.Bitmap.InterpolationMode.HighQualityCubic">
+      <summary>
+        高品質バイキュービック補間アルゴリズム。
+      </summary>
+      <remarks>
+        目的のピクセル値は、通常の 3 次式よりはるかに高密度のサンプリングカーネルを使用して計算されます。
+        倍率に応じてカーネルがサイズ変更されるため、2 倍以上の倍率で縮小する場合に適しています。
+        この値は、Windows 10 からサポートされます。
+      </remarks>
+    </member>
+    <member name="T:C1.WPF.Bitmap.PaletteType">
+      <summary>
+        インデックス付きピクセル形式で使用されるパレットのタイプを指定します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.Custom">
+      <summary>
+        呼び出し元から提供される任意のカスタムパレット。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.MedianCut">
+      <summary>
+        メジアンカットアルゴリズムを使用して生成された最適なパレット。画像内の色から生成されます。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.FixedBW">
+      <summary>
+        白黒パレット。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.FixedHalftone8">
+      <summary>
+        8 色のオン/オフプライマリーカラーと 16 色のシステムカラーが追加されたパレット。重複した色は削除されて、16 色で構成されます。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.FixedHalftone27">
+      <summary>
+        27 色のオン/オフプライマリーカラー（各プライマリーカラーに 3 強度レベル）と 16 色のシステムカラーが追加されたパレット。重複した色は削除されて、35 色で構成されます。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.FixedHalftone64">
+      <summary>
+        64 色のオン/オフプライマリーカラー（各プライマリーカラーに 4 強度レベル）と 16 色のシステムカラーが追加されたパレット。重複した色は削除されて、72 色で構成されます。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.FixedHalftone125">
+      <summary>
+        125 色のオン/オフプライマリーカラー（各プライマリーカラーに 5 強度レベル）と 16 色のシステムカラーが追加されたパレット。重複した色は削除されて、133 色で構成されます。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.FixedHalftone216">
+      <summary>
+        216 色のオン/オフプライマリーカラー（各プライマリーカラーに 6 強度レベル）と 16 色のシステムカラーが追加されたパレット。重複した色は削除されて、224 色で構成されます。
+      </summary>
+      <remarks>
+        これは FixedHalftoneWeb と同じです。
+      </remarks>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.FixedWebPalette">
+      <summary>
+        216 色のオン/オフプライマリーカラー（各プライマリーカラーに 6 強度レベル）と 16 色のシステムカラーが追加されたパレット。重複した色は削除されて、224 色で構成されます。
+      </summary>
+      <remarks>
+        これは WICBitmapPaletteTypeFixedHalftone216 と同じです。
+      </remarks>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.FixedHalftone252">
+      <summary>
+        252 色のオン/オフプライマリーカラーと 16 色のシステムカラーが追加されたパレット。重複した色は削除されて、256 色で構成されます。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.FixedHalftone256">
+      <summary>
+        256 色のオン/オフプライマリーカラーと 16 色のシステムカラーが追加されたパレット。重複した色は削除されて、256 色で構成されます。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.FixedGray4">
+      <summary>
+        4 階調のグレーを含むパレット。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.FixedGray16">
+      <summary>
+        16 階調のグレーを含むパレット。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteType.FixedGray256">
+      <summary>
+        256 階調のグレーを含むパレット。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.PixelFormat">
+      <summary>
+        ビットマップ内の各ピクセルのメモリレイアウトを記述します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Unknown">
+      <summary>
+        不明な形式。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.FormatBlackWhite">
+      <summary>
+        「GUID_WICPixelFormatBlackWhite」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format1bppIndexed">
+      <summary>
+        「GUID_WICPixelFormat1bppIndexed」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format2bppGray">
+      <summary>
+        「GUID_WICPixelFormat2bppGray」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format2bppIndexed">
+      <summary>
+        「GUID_WICPixelFormat2bppIndexed」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format4bppGray">
+      <summary>
+        「GUID_WICPixelFormat4bppGray」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format4bppIndexed">
+      <summary>
+        「GUID_WICPixelFormat4bppIndexed」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format8bppAlpha">
+      <summary>
+        「GUID_WICPixelFormat8bppAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format8bppCb">
+      <summary>
+        「GUID_WICPixelFormat8bppCb」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format8bppCr">
+      <summary>
+        「GUID_WICPixelFormat8bppCr」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format8bppGray">
+      <summary>
+        「GUID_WICPixelFormat8bppGray」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format8bppIndexed">
+      <summary>
+        「GUID_WICPixelFormat8bppIndexed」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format8bppY">
+      <summary>
+        「GUID_WICPixelFormat8bppY」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format16bppBGR555">
+      <summary>
+        「GUID_WICPixelFormat16bppBGR555」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format16bppBGR565">
+      <summary>
+        「GUID_WICPixelFormat16bppBGR565」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format16bppBGRA5551">
+      <summary>
+        「GUID_WICPixelFormat16bppBGRA5551」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format16bppCbCr">
+      <summary>
+        「GUID_WICPixelFormat16bppCbCr」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format16bppGray">
+      <summary>
+        「GUID_WICPixelFormat16bppGray」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format16bppGrayFixedPoint">
+      <summary>
+        「GUID_WICPixelFormat16bppGrayFixedPoint」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format16bppGrayHalf">
+      <summary>
+        「GUID_WICPixelFormat16bppGrayHalf」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format24bpp3Channels">
+      <summary>
+        「GUID_WICPixelFormat24bpp3Channels」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format24bppBGR">
+      <summary>
+        「GUID_WICPixelFormat24bppBGR」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format24bppRGB">
+      <summary>
+        「GUID_WICPixelFormat24bppRGB」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bpp3ChannelsAlpha">
+      <summary>
+        「GUID_WICPixelFormat32bpp3ChannelsAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bpp4Channels">
+      <summary>
+        「GUID_WICPixelFormat32bpp4Channels」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppBGR">
+      <summary>
+        「GUID_WICPixelFormat32bppBGR」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppBGR101010">
+      <summary>
+        「GUID_WICPixelFormat32bppBGR101010」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppBGRA">
+      <summary>
+        「GUID_WICPixelFormat32bppBGRA」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppCMYK">
+      <summary>
+        「GUID_WICPixelFormat32bppCMYK」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppGrayFixedPoint">
+      <summary>
+        「GUID_WICPixelFormat32bppGrayFixedPoint」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppGrayFloat">
+      <summary>
+        「GUID_WICPixelFormat32bppGrayFloat」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppPBGRA">
+      <summary>
+        「GUID_WICPixelFormat32bppPBGRA」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppPRGBA">
+      <summary>
+        「GUID_WICPixelFormat32bppPRGBA」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppRGB">
+      <summary>
+        「GUID_WICPixelFormat32bppRGB」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppRGBA">
+      <summary>
+        「GUID_WICPixelFormat32bppRGBA」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppRGBA1010102">
+      <summary>
+        「GUID_WICPixelFormat32bppRGBA1010102」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppRGBA1010102XR">
+      <summary>
+        「GUID_WICPixelFormat32bppRGBA1010102XR」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format32bppRGBE">
+      <summary>
+        「GUID_WICPixelFormat32bppRGBE」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format40bpp4ChannelsAlpha">
+      <summary>
+        「GUID_WICPixelFormat40bpp4ChannelsAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format40bpp5Channels">
+      <summary>
+        「GUID_WICPixelFormat40bpp5Channels」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format40bppCMYKAlpha">
+      <summary>
+        「GUID_WICPixelFormat40bppCMYKAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format48bpp3Channels">
+      <summary>
+        「GUID_WICPixelFormat48bpp3Channels」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format48bpp5ChannelsAlpha">
+      <summary>
+        「GUID_WICPixelFormat48bpp5ChannelsAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format48bpp6Channels">
+      <summary>
+        「GUID_WICPixelFormat48bpp6Channels」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format48bppBGR">
+      <summary>
+        「GUID_WICPixelFormat48bppBGR」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format48bppBGRFixedPoint">
+      <summary>
+        「GUID_WICPixelFormat48bppBGRFixedPoint」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format48bppRGB">
+      <summary>
+        「GUID_WICPixelFormat48bppRGB」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format48bppRGBFixedPoint">
+      <summary>
+        「GUID_WICPixelFormat48bppRGBFixedPoint」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format48bppRGBHalf">
+      <summary>
+        「GUID_WICPixelFormat48bppRGBHalf」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format56bpp6ChannelsAlpha">
+      <summary>
+        「GUID_WICPixelFormat56bpp6ChannelsAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format56bpp7Channels">
+      <summary>
+        「GUID_WICPixelFormat56bpp7Channels」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bpp3ChannelsAlpha">
+      <summary>
+        「GUID_WICPixelFormat64bpp3ChannelsAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bpp4Channels">
+      <summary>
+        「GUID_WICPixelFormat64bpp4Channels」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bpp7ChannelsAlpha">
+      <summary>
+        「GUID_WICPixelFormat64bpp7ChannelsAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bpp8Channels">
+      <summary>
+        「GUID_WICPixelFormat64bpp8Channels」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bppBGRA">
+      <summary>
+        「GUID_WICPixelFormat64bppBGRA」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bppBGRAFixedPoint">
+      <summary>
+        「GUID_WICPixelFormat64bppBGRAFixedPoint」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bppCMYK">
+      <summary>
+        「GUID_WICPixelFormat64bppCMYK」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bppPBGRA">
+      <summary>
+        「GUID_WICPixelFormat64bppPBGRA」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bppPRGBA">
+      <summary>
+        「GUID_WICPixelFormat64bppPRGBA」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bppPRGBAHalf">
+      <summary>
+        「GUID_WICPixelFormat64bppPRGBAHalf」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bppRGB">
+      <summary>
+        「GUID_WICPixelFormat64bppRGB」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bppRGBA">
+      <summary>
+        「GUID_WICPixelFormat64bppRGBA」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bppRGBAFixedPoint">
+      <summary>
+        「GUID_WICPixelFormat64bppRGBAFixedPoint」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bppRGBAHalf">
+      <summary>
+        「GUID_WICPixelFormat64bppRGBAHalf」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bppRGBFixedPoint">
+      <summary>
+        「GUID_WICPixelFormat64bppRGBFixedPoint」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format64bppRGBHalf">
+      <summary>
+        「GUID_WICPixelFormat64bppRGBHalf」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format72bpp8ChannelsAlpha">
+      <summary>
+        「GUID_WICPixelFormat72bpp8ChannelsAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format80bpp4ChannelsAlpha">
+      <summary>
+        「GUID_WICPixelFormat80bpp4ChannelsAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format80bpp5Channels">
+      <summary>
+        「GUID_WICPixelFormat80bpp5Channels」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format80bppCMYKAlpha">
+      <summary>
+        「GUID_WICPixelFormat80bppCMYKAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format96bpp5ChannelsAlpha">
+      <summary>
+        「GUID_WICPixelFormat96bpp5ChannelsAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format96bpp6Channels">
+      <summary>
+        「GUID_WICPixelFormat96bpp6Channels」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format96bppRGBFixedPoint">
+      <summary>
+        「GUID_WICPixelFormat96bppRGBFixedPoint」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format96bppRGBFloat">
+      <summary>
+        「GUID_WICPixelFormat96bppRGBFloat」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format112bpp6ChannelsAlpha">
+      <summary>
+        「GUID_WICPixelFormat112bpp6ChannelsAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format112bpp7Channels">
+      <summary>
+        「GUID_WICPixelFormat112bpp7Channels」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format128bpp7ChannelsAlpha">
+      <summary>
+        「GUID_WICPixelFormat128bpp7ChannelsAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format128bpp8Channels">
+      <summary>
+        「GUID_WICPixelFormat128bpp8Channels」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format128bppPRGBAFloat">
+      <summary>
+        「GUID_WICPixelFormat128bppPRGBAFloat」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format128bppRGBAFixedPoint">
+      <summary>
+        「GUID_WICPixelFormat128bppRGBAFixedPoint」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format128bppRGBAFloat">
+      <summary>
+        「GUID_WICPixelFormat128bppRGBAFloat」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format128bppRGBFixedPoint">
+      <summary>
+        「GUID_WICPixelFormat128bppRGBFixedPoint」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format128bppRGBFloat">
+      <summary>
+        「GUID_WICPixelFormat128bppRGBFloat」を参照してください。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PixelFormat.Format144bpp8ChannelsAlpha">
+      <summary>
+        「GUID_WICPixelFormat144bpp8ChannelsAlpha」を参照してください。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.PngFilter">
+      <summary>
+        圧縮の最適化に使用できる PNG フィルタを記述します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PngFilter.Unspecified">
+      <summary>
+        PNG フィルタが指定されていないことを示します。こ場合、WIC は、画像に最適なフィルタオプションをアルゴリズム的に選択します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PngFilter.None">
+      <summary>
+        PNG フィルタがないことを示します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PngFilter.Sub">
+      <summary>
+        PNG Sub フィルタを示します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PngFilter.Up">
+      <summary>
+        PNG Up フィルタを示します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PngFilter.Average">
+      <summary>
+        PNG Average フィルタを示します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PngFilter.Paeth">
+      <summary>
+        PNG Paeth フィルタを示します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PngFilter.Adaptive">
+      <summary>
+        PNG Adaptive フィルタを示します。この場合、WIC は、スキャンラインごとに最適なフィルタモードを選択します。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.TiffCompression">
+      <summary>
+        Tagged Image File Format（TIFF）圧縮オプションを指定します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TiffCompression.DontCare">
+      <summary>
+        画像とピクセル形式に基づく最適な圧縮アルゴリズムを示します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TiffCompression.None">
+      <summary>
+        圧縮なしを示します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TiffCompression.CCITT3">
+      <summary>
+        CCITT3 圧縮アルゴリズム。このアルゴリズムは、1bpp ピクセル形式にのみ有効です。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TiffCompression.CCITT4">
+      <summary>
+        CCITT4 圧縮アルゴリズム。このアルゴリズムは、1bpp ピクセル形式にのみ有効です。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TiffCompression.LZW">
+      <summary>
+        LZW 圧縮アルゴリズム。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TiffCompression.RLE">
+      <summary>
+        RLE 圧縮アルゴリズム。このアルゴリズムは、1bpp ピクセル形式にのみ有効です。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TiffCompression.ZIP">
+      <summary>
+        ZIP 圧縮アルゴリズム。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TiffCompression.LZWHDifferencing">
+      <summary>
+        LZWH 差分アルゴリズムを示します。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.TransformOptions">
+      <summary>
+        反転変換と回転変換を指定します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TransformOptions.Rotate0">
+      <summary>
+        0 度の回転。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TransformOptions.Rotate90">
+      <summary>
+        90 度の時計回りの回転。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TransformOptions.Rotate180">
+      <summary>
+        180 度の時計回りの回転。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TransformOptions.Rotate270">
+      <summary>
+        270 度の時計回りの回転。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TransformOptions.FlipHorizontal">
+      <summary>
+        水平反転。ピクセルが垂直 y 軸を中心に反転します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.TransformOptions.FlipVertical">
+      <summary>
+        垂直反転。ピクセルが水平 x 軸を中心に反転します。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.ImageRect">
+      <summary>
+        画像をクリッピングする四角形を表します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ImageRect.X">
+      <summary>
+        四角形の水平座標。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ImageRect.Y">
+      <summary>
+        四角形の垂直座標。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ImageRect.Width">
+      <summary>
+        四角形の幅。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ImageRect.Height">
+      <summary>
+        四角形の高さ。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.ImageRect.Empty">
+      <summary>
+        空の四角形。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.#ctor(System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.ImageRect" /> 構造の新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.ImageRect" /> 構造の新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.FromLTRB(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        (left, top, right, bottom) 座標から <see cref="T:C1.WPF.Bitmap.ImageRect" /> 構造体を作成します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.#ctor(C1.Util.DX.RectL)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.ImageRect" /> 構造の新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.ToRectL">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.ImageRect" /> を <see cref="T:C1.Util.DX.RectL" /> に変換します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.#ctor(System.Windows.Int32Rect)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.ImageRect" /> 構造の新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.ToInt32Rect">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.ImageRect" /> を <see cref="T:System.Windows.Int32Rect" /> に変換します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.ImageRect.Left">
+      <summary>
+        左端の x 座標を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.ImageRect.Top">
+      <summary>
+        上端の y 軸を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.ImageRect.Right">
+      <summary>
+        右端の x 座標を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.ImageRect.Bottom">
+      <summary>
+        下端の y 軸を取得または設定します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.Offset(System.Int32,System.Int32)">
+      <summary>
+        指定された量だけ四角形をオフセットします。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.Inflate(System.Int32,System.Int32)">
+      <summary>
+        指定された量だけ四角形を拡大します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.Contains(System.Int32,System.Int32)">
+      <summary>
+        指定されたポイントがこの四角形に含まれるかどうかを判定します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.Contains(C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        指定された四角形がこの四角形に完全に含まれるかどうかを判定します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.IntersectsWith(C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        この四角形が rect と重なるかどうかを判定します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.Intersect(C1.WPF.Bitmap.ImageRect,C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        2 つの四角形の共通部分を表す四角形を返します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.Union(C1.WPF.Bitmap.ImageRect,C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        1 つの結合部分を形成する 2 つの四角形の両方を含む最小の 3 番目の四角形を作成します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.ImageRect.HasSpace">
+      <summary>
+        四角形内にスペースがあるかどうかを判定します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.Equals(System.Object)">
+      <summary>
+        このインスタンスと指定されたオブジェクトが等しいかどうかを示します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.Equals(C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        このインスタンスと指定されたオブジェクトが等しいかどうかを示します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.op_Equality(C1.WPF.Bitmap.ImageRect,C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        指定された値どうしが等しいかどうかを判定します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.op_Inequality(C1.WPF.Bitmap.ImageRect,C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        指定された値どうしが等しくないかかどうかを判定します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.GetHashCode">
+      <summary>
+        このインスタンスのハッシュコードを返します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.ToString">
+      <summary>
+        現在のオブジェクトを表す文字列を返します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.op_Explicit(C1.WPF.Bitmap.ImageRect)~C1.Util.DX.RectL">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.ImageRect" /> から <see cref="T:C1.Util.DX.RectL" /> に明示的な変換を実行します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.op_Explicit(C1.Util.DX.RectL)~C1.WPF.Bitmap.ImageRect">
+      <summary>
+        <see cref="T:C1.Util.DX.RectL" /> から <see cref="T:C1.WPF.Bitmap.ImageRect" /> に明示的な変換を実行します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.op_Explicit(C1.WPF.Bitmap.ImageRect)~System.Windows.Int32Rect">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.ImageRect" /> から <see cref="T:System.Windows.Int32Rect" /> に明示的な変換を実行します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.ImageRect.op_Explicit(System.Windows.Int32Rect)~C1.WPF.Bitmap.ImageRect">
+      <summary>
+        <see cref="T:System.Windows.Int32Rect" /> から <see cref="T:C1.WPF.Bitmap.ImageRect" /> に明示的な変換を実行します。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.PaletteColor">
+      <summary>
+        色を 32bppBGRA 形式で表します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Value">
+      <summary>
+        圧縮された色値。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.#ctor(System.UInt32)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.PaletteColor" /> 構造の新しいインスタンスを初期化します。
+      </summary>
+      <param name="argb">4 つの色成分のすべてを含む圧縮された符号なし整数（32bppBGRA 形式）。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.PaletteColor" /> 構造の新しいインスタンスを初期化します。
+      </summary>
+      <param name="red">色の赤成分。</param>
+      <param name="green">色の緑成分。</param>
+      <param name="blue">色の青成分。</param>
+      <param name="alpha">色のアルファ成分。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.#ctor(C1.Util.DX.ColorF)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.PaletteColor" /> 構造の新しいインスタンスを初期化します。
+      </summary>
+      <param name="value">ソース C1.Util.DX.ColorF。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.#ctor(System.Windows.Media.Color)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.PaletteColor" /> 構造の新しいインスタンスを初期化します。
+      </summary>
+      <param name="color">System.Windows.Media.Color 値。</param>
+    </member>
+    <member name="P:C1.WPF.Bitmap.PaletteColor.R">
+      <summary>
+        色の赤成分。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.PaletteColor.G">
+      <summary>
+        色の緑成分。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.PaletteColor.B">
+      <summary>
+        色の青成分。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.PaletteColor.A">
+      <summary>
+        色のアルファ成分。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.PaletteColor.IsEmpty">
+      <summary>
+        この ColorF 構造体が初期化されていないかどうかを取得します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.PaletteColor.IsTransparent">
+      <summary>
+        この色による描画を省略できるかどうかを示す値を取得します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.ToColorF">
+      <summary>
+        色を C1.Util.DX.ColorF に変換します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.ToColor">
+      <summary>
+        色を System.Windows.Media.Color に変換します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.op_Equality(C1.WPF.Bitmap.PaletteColor,C1.WPF.Bitmap.PaletteColor)">
+      <summary>
+        指定された値どうしが等しいかどうかを判定します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.op_Inequality(C1.WPF.Bitmap.PaletteColor,C1.WPF.Bitmap.PaletteColor)">
+      <summary>
+        指定された値どうしが等しくないかかどうかを判定します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.op_Explicit(C1.WPF.Bitmap.PaletteColor)~C1.Util.DX.ColorF">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.PaletteColor" /> から C1.Util.DX.ColorF に明示的な変換を実行します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.op_Explicit(C1.WPF.Bitmap.PaletteColor)~System.Windows.Media.Color">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.PaletteColor" /> から System.Windows.Media.Color に明示的な変換を実行します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.op_Explicit(C1.Util.DX.ColorF)~C1.WPF.Bitmap.PaletteColor">
+      <summary>
+        <see cref="T:C1.Util.DX.ColorF" /> から <see cref="T:C1.WPF.Bitmap.PaletteColor" /> に明示的な変換を実行します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.op_Explicit(System.Windows.Media.Color)~C1.WPF.Bitmap.PaletteColor">
+      <summary>
+        System.Windows.Media.Color から <see cref="T:C1.WPF.Bitmap.PaletteColor" /> に明示的な変換を実行します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.ToString">
+      <summary>
+        現在のオブジェクトを表す文字列を返します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.ToString(System.String)">
+      <summary>
+        このインスタンスを表す <see cref="T:System.String" /> を返します。
+      </summary>
+      <param name="format">形式。</param>
+      <returns>
+        このインスタンスを表す <see cref="T:System.String" />。
+      </returns>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.ToString(System.IFormatProvider)">
+      <summary>
+        このインスタンスを表す <see cref="T:System.String" /> を返します。
+      </summary>
+      <param name="formatProvider">書式プロバイダ。</param>
+      <returns>
+        このインスタンスを表す <see cref="T:System.String" />。
+      </returns>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.ToString(System.String,System.IFormatProvider)">
+      <summary>
+        このインスタンスを表す <see cref="T:System.String" /> を返します。
+      </summary>
+      <param name="format">形式。</param>
+      <param name="formatProvider">書式プロバイダ。</param>
+      <returns>
+        このインスタンスを表す <see cref="T:System.String" />。
+      </returns>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.GetHashCode">
+      <summary>
+        このインスタンスのハッシュコードを返します。
+      </summary>
+      <returns>
+        このインスタンスのハッシュコード。これは、ハッシュアルゴリズムやハッシュテーブルなどのデータ構造での使用に適しています。
+      </returns>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.Equals(C1.WPF.Bitmap.PaletteColor)">
+      <summary>
+        指定された <see cref="T:C1.WPF.Bitmap.PaletteColor" /> がこのインスタンスと等しいかどうかを判定します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.PaletteColor.Equals(System.Object)">
+      <summary>
+        指定された <see cref="T:System.Object" /> がこのインスタンスと等しいかどうかを判定します。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Empty">
+      <summary>
+        空の色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Transparent">
+      <summary>
+        透明色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.AliceBlue">
+      <summary>
+        アリスブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.AntiqueWhite">
+      <summary>
+        アンティークホワイト色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Aqua">
+      <summary>
+        水色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Aquamarine">
+      <summary>
+        アクアマリン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Azure">
+      <summary>
+        空色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Beige">
+      <summary>
+        ベージュ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Bisque">
+      <summary>
+        ビスク色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Black">
+      <summary>
+        黒色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.BlanchedAlmond">
+      <summary>
+        ブランシュアーモンド色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Blue">
+      <summary>
+        青色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.BlueViolet">
+      <summary>
+        青紫色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Brown">
+      <summary>
+        茶色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.BurlyWood">
+      <summary>
+        バーリーウッド色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.CadetBlue">
+      <summary>
+        カデットブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Chartreuse">
+      <summary>
+        シャルトルーズ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Chocolate">
+      <summary>
+        チョコレート色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Coral">
+      <summary>
+        さんご色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.CornflowerBlue">
+      <summary>
+        コーンフラワーブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Cornsilk">
+      <summary>
+        コーンシルク色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Crimson">
+      <summary>
+        深紅色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Cyan">
+      <summary>
+        シアン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkBlue">
+      <summary>
+        濃い青色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkCyan">
+      <summary>
+        濃いシアン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkGoldenrod">
+      <summary>
+        濃いゴールデンロッド色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkGray">
+      <summary>
+        濃い灰色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkGreen">
+      <summary>
+        濃い緑色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkKhaki">
+      <summary>
+        濃いカーキ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkMagenta">
+      <summary>
+        濃いマゼンタ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkOliveGreen">
+      <summary>
+        濃いオリーブグリーン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkOrange">
+      <summary>
+        濃いオレンジ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkOrchid">
+      <summary>
+        濃いオーキッド色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkRed">
+      <summary>
+        濃い赤色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkSalmon">
+      <summary>
+        濃いサーモンピンク色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkSeaGreen">
+      <summary>
+        濃いシーグリーン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkSlateBlue">
+      <summary>
+        濃いスレートブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkSlateGray">
+      <summary>
+        濃いスレートグレー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkTurquoise">
+      <summary>
+        濃いターコイズ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DarkViolet">
+      <summary>
+        濃いバイオレット色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DeepPink">
+      <summary>
+        深いピンク色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DeepSkyBlue">
+      <summary>
+        深いスカイブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DimGray">
+      <summary>
+        ディムグレイ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.DodgerBlue">
+      <summary>
+        ドジャーブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Firebrick">
+      <summary>
+        れんが色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.FloralWhite">
+      <summary>
+        フローラルホワイト色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.ForestGreen">
+      <summary>
+        フォレストグリーン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Fuchsia">
+      <summary>
+        赤紫色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Gainsboro">
+      <summary>
+        ゲーンズボロ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.GhostWhite">
+      <summary>
+        ゴーストホワイト色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Gold">
+      <summary>
+        金色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Goldenrod">
+      <summary>
+        ゴールデンロッド色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Gray">
+      <summary>
+        灰色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Green">
+      <summary>
+        緑色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.GreenYellow">
+      <summary>
+        グリーンイエロー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Honeydew">
+      <summary>
+        ハニーデュー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.HotPink">
+      <summary>
+        ホットピンク色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.IndianRed">
+      <summary>
+        インディアンレッド色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Indigo">
+      <summary>
+        インディゴ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Ivory">
+      <summary>
+        アイボリー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Khaki">
+      <summary>
+        カーキ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Lavender">
+      <summary>
+        ラベンダー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LavenderBlush">
+      <summary>
+        ラベンダーブラッシュ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LawnGreen">
+      <summary>
+        若草色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LemonChiffon">
+      <summary>
+        レモンシフォン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightBlue">
+      <summary>
+        ライトブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightCoral">
+      <summary>
+        薄いさんご色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightCyan">
+      <summary>
+        薄いシアン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightGoldenrodYellow">
+      <summary>
+        薄いゴールデンイエロー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightGray">
+      <summary>
+        薄い灰色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightGreen">
+      <summary>
+        薄い緑色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightPink">
+      <summary>
+        薄いピンク色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightSalmon">
+      <summary>
+        薄いサーモンピンク色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightSeaGreen">
+      <summary>
+        薄いシーグリーン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightSkyBlue">
+      <summary>
+        薄いスカイブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightSlateGray">
+      <summary>
+        薄いスレートグレー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightSteelBlue">
+      <summary>
+        薄いスチールブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LightYellow">
+      <summary>
+        薄い黄色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Lime">
+      <summary>
+        黄緑色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.LimeGreen">
+      <summary>
+        ライムグリーン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Linen">
+      <summary>
+        リネン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Magenta">
+      <summary>
+        マゼンタ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Maroon">
+      <summary>
+        栗色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.MediumAquamarine">
+      <summary>
+        淡いアクアマリン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.MediumBlue">
+      <summary>
+        淡い青色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.MediumOrchid">
+      <summary>
+        淡いオーキッド色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.MediumPurple">
+      <summary>
+        淡い紫色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.MediumSeaGreen">
+      <summary>
+        淡いシーグリーン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.MediumSlateBlue">
+      <summary>
+        淡いスレートブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.MediumSpringGreen">
+      <summary>
+        淡いスプリンググリーン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.MediumTurquoise">
+      <summary>
+        淡いターコイズ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.MediumVioletRed">
+      <summary>
+        淡いバイオレット色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.MidnightBlue">
+      <summary>
+        ミッドナイトブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.MintCream">
+      <summary>
+        ミントクリーム色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.MistyRose">
+      <summary>
+        ミスティローズ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Moccasin">
+      <summary>
+        モカシン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.NavajoWhite">
+      <summary>
+        ナバホホワイト色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Navy">
+      <summary>
+        紺色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.OldLace">
+      <summary>
+        オールドレース色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Olive">
+      <summary>
+        オリーブ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.OliveDrab">
+      <summary>
+        オリーブドラブ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Orange">
+      <summary>
+        オレンジ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.OrangeRed">
+      <summary>
+        オレンジレッド色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Orchid">
+      <summary>
+        オーキッド色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.PaleGoldenrod">
+      <summary>
+        ペールゴールデンロッド色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.PaleGreen">
+      <summary>
+        ペールグリーン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.PaleTurquoise">
+      <summary>
+        ペールターコイズ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.PaleVioletRed">
+      <summary>
+        ペールバイオレットレッド色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.PapayaWhip">
+      <summary>
+        パパイヤホイップ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.PeachPuff">
+      <summary>
+        ピーチパフ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Peru">
+      <summary>
+        黄土色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Pink">
+      <summary>
+        ピンク色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Plum">
+      <summary>
+        プラム色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.PowderBlue">
+      <summary>
+        パウダーブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Purple">
+      <summary>
+        紫色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Red">
+      <summary>
+        赤色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.RosyBrown">
+      <summary>
+        ローズブラウン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.RoyalBlue">
+      <summary>
+        ロイヤルブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.SaddleBrown">
+      <summary>
+        サドルブラウン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Salmon">
+      <summary>
+        サーモンピンク色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.SandyBrown">
+      <summary>
+        サンディブラウン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.SeaGreen">
+      <summary>
+        シーグリーン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.SeaShell">
+      <summary>
+        シーシェル色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Sienna">
+      <summary>
+        赤褐色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Silver">
+      <summary>
+        銀色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.SkyBlue">
+      <summary>
+        スカイブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.SlateBlue">
+      <summary>
+        スレートブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.SlateGray">
+      <summary>
+        スレートグレー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Snow">
+      <summary>
+        スノー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.SpringGreen">
+      <summary>
+        スプリンググリーン色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.SteelBlue">
+      <summary>
+        スチールブルー色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Tan">
+      <summary>
+        黄褐色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Teal">
+      <summary>
+        青緑色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Thistle">
+      <summary>
+        あざみ色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Tomato">
+      <summary>
+        トマト色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Turquoise">
+      <summary>
+        薄い水色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Violet">
+      <summary>
+        紫色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Wheat">
+      <summary>
+        小麦色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.White">
+      <summary>
+        白色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.WhiteSmoke">
+      <summary>
+        ホワイトスモーク色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.Yellow">
+      <summary>
+        黄色。
+      </summary>
+    </member>
+    <member name="F:C1.WPF.Bitmap.PaletteColor.YellowGreen">
+      <summary>
+        イエローグリーン色。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.BaseOptions">
+      <summary>
+        すべてのエンコーダオプションの基本クラス。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.BaseOptions.SourceRect">
+      <summary>
+        エンコードのソース四角形を指定します。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.BmpOptions">
+      <summary>
+        ネイティブ BMP コーデックによってサポートされるエンコーダオプション。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.BmpOptions.EnableV5Header32bppBGRA">
+      <summary>
+        有効なアルファチャンネルコンテンツを含む BITMAPV5HEADER を使用して BMP を書き込むかどうかを指定します。
+      </summary>
+      <remarks>
+        デフォルト値は false です。
+      </remarks>
+    </member>
+    <member name="T:C1.WPF.Bitmap.GifOptions">
+      <summary>
+        ネイティブ GIF コーデックによってサポートされるエンコーダオプション。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.JpegOptions">
+      <summary>
+        ネイティブ JPEG コーデックによってサポートされるエンコーダオプション。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegOptions.ImageQuality">
+      <summary>
+        目的の画像忠実度を指定します。0.0 は最小の忠実度を示し、1.0 は最大の忠実度を示します。
+      </summary>
+      <remarks>
+        デフォルト値は 0.9 です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegOptions.TransformOptions">
+      <summary>
+        デコード時に画像を回転または反転するかどうかを指定します。
+      </summary>
+      <remarks>
+        デフォルト値は Rotate0 です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegOptions.SuppressApp0">
+      <summary>
+        画像データのエンコード中に App0 メタデータの書き込みを抑止するかどうかを指定します。
+      </summary>
+      <remarks>
+        デフォルト値は false です。
+      </remarks>
+    </member>
+    <member name="T:C1.WPF.Bitmap.JpegXROptions">
+      <summary>
+        ネイティブ JPEG XR コーデックによってサポートされるエンコーダオプション。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.AlphaDataDiscard">
+      <summary>
+        圧縮ドメインのトランスコード中に破棄するアルファ度数データの量を設定します。
+      </summary>
+      <remarks>
+        デフォルト値は None です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.AlphaQuality">
+      <summary>
+        平面アルファチャンネル画像の圧縮品質を設定します。
+      </summary>
+      <remarks>
+        デフォルト値は 1 です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.TransformOptions">
+      <summary>
+        デコード時に画像を回転または反転するかどうかを指定します。
+      </summary>
+      <remarks>
+        デフォルト値は Rotate0 です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.CompressedDomainTranscode">
+      <summary>
+        圧縮ドメインのトランスコードを有効または無効にします。
+      </summary>
+      <remarks>
+        デフォルト値は true です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.FrequencyOrder">
+      <summary>
+        頻度順のエンコードを有効にします。
+      </summary>
+      <remarks>
+        デフォルト値は true です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.HorizontalTileSlices">
+      <summary>
+        水平タイルの数を設定します。
+      </summary>
+      <remarks>
+        デフォルト値は、(画像幅 - 1) &gt;&gt; 8 です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.IgnoreOverlap">
+      <summary>
+        圧縮ドメインのトランスコード中にエンコーダがタイルの境界をどのように処理するかを指定します。
+      </summary>
+      <remarks>
+        デフォルト値は false です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.ImageDataDiscard">
+      <summary>
+        圧縮ドメインのトランスコード中に破棄する画像度数データの量を設定します。
+      </summary>
+      <remarks>
+        デフォルト値は 0 です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.ImageQuality">
+      <summary>
+        画質を設定します。
+      </summary>
+      <remarks>
+        デフォルト値は 0.9 です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.InterleavedAlpha">
+      <summary>
+        インターリーブアルファと平面アルファのどちらでエンコードするかを指定します。
+      </summary>
+      <remarks>
+        デフォルト値は false です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.Lossless">
+      <summary>
+        ロス圧縮を有効にします。
+      </summary>
+      <remarks>
+        デフォルト値は false です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.Overlap">
+      <summary>
+        オーバーラップフィルタリングのレベルを設定します。
+      </summary>
+      <remarks>
+        デフォルト値は 1 です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.ProgressiveMode">
+      <summary>
+        プログレッシブエンコーディングを有効または無効にします。
+      </summary>
+      <remarks>
+        デフォルト値は false です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.Quality">
+      <summary>
+        圧縮品質を設定します。
+      </summary>
+      <remarks>
+        デフォルト値は 1 です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.StreamOnly">
+      <summary>
+        ストリーム専用モードを有効または無効にします。
+      </summary>
+      <remarks>
+        デフォルト値は false です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.Subsampling">
+      <summary>
+        クロマサブサンプリングを設定します。このプロパティは、RGB 画像にのみ適用されます。
+      </summary>
+      <remarks>
+        ImageQuality &gt; 0.8 の場合のデフォルト値は 3 です。そうでない場合は 1 です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.UseCodecOptions">
+      <summary>
+        汎用の ImageQuality プロパティではなく、Quality、Overlap、Subsampling の各プロパティを使用するかどうかを指定します。
+      </summary>
+      <remarks>
+        デフォルト値は false です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.JpegXROptions.VerticalTileSlices">
+      <summary>
+        垂直タイルの数を設定します。
+      </summary>
+      <remarks>
+        デフォルト値は、(画像高さ - 1) &gt;&gt; 8 です。
+      </remarks>
+    </member>
+    <member name="T:C1.WPF.Bitmap.PngOptions">
+      <summary>
+        ネイティブ PNG コーデックによってサポートされるエンコーダオプション。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.PngOptions.Interlace">
+      <summary>
+        画像データをインターレースとしてエンコードするかどうかを指定します。
+      </summary>
+      <remarks>
+        デフォルト値は false です。
+      </remarks>
+    </member>
+    <member name="P:C1.WPF.Bitmap.PngOptions.Filter">
+      <summary>
+        画像の圧縮で使用するフィルタオプションを指定します。
+      </summary>
+      <remarks>
+        デフォルト値は PngFilter.Unspecified です。
+      </remarks>
+    </member>
+    <member name="T:C1.WPF.Bitmap.TiffOptions">
+      <summary>
+        ネイティブ TIFF コーデックによってサポートされるエンコーダオプション。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.TiffOptions.CompressionQuality">
+      <summary>
+        目的の圧縮品質を指定します。値 1.0 は、最も効率のよい圧縮スキーマを指定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.TiffOptions.TIFFCompressionMethod">
+      <summary>
+        TIFF 圧縮方法を指定します。
+      </summary>
+      <remarks>
+        デフォルト値は DontCare です。
+      </remarks>
+    </member>
+    <member name="T:C1.WPF.Bitmap.BaseTransform">
+      <summary>
+        すべてのビットマップ変換の基本クラスです。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.Clipper">
+      <summary>
+        指定された四角形領域に対応するクリッピングされたビットマップを生成します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.Clipper.#ctor">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.Clipper" /> クラスの新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.Clipper.#ctor(C1.WPF.Bitmap.ImageRect)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.Clipper" /> クラスの新しいインスタンスを初期化します。
+      </summary>
+      <param name="imageRect">クリッピングするビットマップ四角形。</param>
+    </member>
+    <member name="P:C1.WPF.Bitmap.Clipper.ImageRect">
+      <summary>
+        クリッピングするビットマップ四角形を取得または設定します。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.FlipRotator">
+      <summary>
+        反転（水平または垂直）および/または回転（90 度単位）したビットマップを作成します。回転は反転の前に行われます。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.FlipRotator.#ctor">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.FlipRotator" /> クラスの新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.FlipRotator.#ctor(C1.WPF.Bitmap.TransformOptions)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.FlipRotator" /> クラスの新しいインスタンスを初期化します。
+      </summary>
+      <param name="transformOptions">画像を反転または回転するための変換オプション。</param>
+    </member>
+    <member name="P:C1.WPF.Bitmap.FlipRotator.TransformOptions">
+      <summary>
+        画像を反転または回転するための変換オプションを取得または設定します。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.FormatConverter">
+      <summary>
+        画像データをあるピクセル形式から別のピクセル形式に変換します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.FormatConverter.#ctor">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.FormatConverter" /> クラスの新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.FormatConverter.#ctor(C1.WPF.Bitmap.PixelFormat)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.FormatConverter" /> クラスの新しいインスタンスを初期化します。
+      </summary>
+      <param name="destinationFormat">目的のピクセル形式。</param>
+    </member>
+    <member name="P:C1.WPF.Bitmap.FormatConverter.DestinationFormat">
+      <summary>
+        目的のピクセル形式を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.FormatConverter.DitherType">
+      <summary>
+        変換に使用されるディザアルゴリズムのタイプを取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.FormatConverter.Palette">
+      <summary>
+        変換に使用されるパレットを取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.FormatConverter.AlphaThresholdPercent">
+      <summary>
+        変換に使用されるアルファ閾値を取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.FormatConverter.PaletteTranslate">
+      <summary>
+        変換に使用されるパレット変換タイプを取得または設定します。
+      </summary>
+    </member>
+    <member name="T:C1.WPF.Bitmap.Scaler">
+      <summary>
+        リサンプリングまたはフィルタアルゴリズムを使用して入力ビットマップをサイズ変更したビットマップを表します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.Scaler.#ctor">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.Scaler" /> クラスの新しいインスタンスを初期化します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.Scaler.#ctor(System.Int32,System.Int32,C1.WPF.Bitmap.InterpolationMode)">
+      <summary>
+        <see cref="T:C1.WPF.Bitmap.Scaler" /> クラスの新しいインスタンスを初期化します。
+      </summary>
+      <param name="destinationWidth">目的の幅。</param>
+      <param name="destinationHeight">目的の高さ。</param>
+      <param name="interpolationMode">拡大縮小時に使用される補間モード。</param>
+    </member>
+    <member name="P:C1.WPF.Bitmap.Scaler.DestinationWidth">
+      <summary>
+        目的の幅をピクセル単位で取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.Scaler.DestinationHeight">
+      <summary>
+        目的の高さをピクセル単位で取得または設定します。
+      </summary>
+    </member>
+    <member name="P:C1.WPF.Bitmap.Scaler.InterpolationMode">
+      <summary>
+        拡大縮小時に使用される補間モードを取得または設定します。
+      </summary>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.CreateImage(System.Int32,System.Int32,C1.WPF.Bitmap.PixelFormat)">
+      <summary>
+        コンテンツが初期化されていない指定されたサイズの内部画像を作成します。
+      </summary>
+      <param name="width">画像の幅（ピクセル単位）。</param>
+      <param name="height">画像の高さ（ピクセル単位）。</param>
+      <param name="pixelFormat">画像のピクセル形式。</param>
+    </member>
+    <member name="M:C1.WPF.Bitmap.C1Bitmap.Import(C1.WPF.Bitmap.C1Bitmap)">
+      <summary>
+        C1Bitmap の別のインスタンスから画像をロードします。
+      </summary>
+      <param name="bitmap">ソースビットマップ。</param>
+    </member>
+  </members>
+</doc>
